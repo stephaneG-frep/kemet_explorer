@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/section_title.dart';
+import 'gallery_screen.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({
@@ -11,6 +13,10 @@ class DetailScreen extends StatelessWidget {
     required this.description,
     this.extraLines = const [],
     this.imagePath,
+    this.imageSourceUrl,
+    this.galleryImages = const [],
+    this.galleryTitles = const [],
+    this.galleryIndex = 0,
     this.isFavorite = false,
     this.onFavoriteToggle,
   });
@@ -20,8 +26,18 @@ class DetailScreen extends StatelessWidget {
   final String description;
   final List<String> extraLines;
   final String? imagePath;
+  final String? imageSourceUrl;
+  final List<String> galleryImages;
+  final List<String> galleryTitles;
+  final int galleryIndex;
   final bool isFavorite;
   final VoidCallback? onFavoriteToggle;
+
+  Future<void> _openSource() async {
+    if (imageSourceUrl == null) return;
+    final uri = Uri.parse(imageSourceUrl!);
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +45,24 @@ class DetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Kemet Explorer'),
         actions: [
+          if (galleryImages.isNotEmpty)
+            IconButton(
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => GalleryScreen(
+                    images: galleryImages,
+                    titles: galleryTitles,
+                    initialIndex: galleryIndex,
+                  ),
+                ),
+              ),
+              icon: const Icon(Icons.photo_library_outlined),
+            ),
+          if (imageSourceUrl != null)
+            IconButton(
+              onPressed: _openSource,
+              icon: const Icon(Icons.link_rounded),
+            ),
           if (onFavoriteToggle != null)
             IconButton(
               onPressed: onFavoriteToggle,

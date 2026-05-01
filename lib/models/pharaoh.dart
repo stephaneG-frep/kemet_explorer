@@ -6,6 +6,7 @@ class Pharaoh {
     required this.role,
     required this.facts,
     required this.imagePath,
+    this.imageSourceUrl,
   });
 
   final String id;
@@ -14,4 +15,5 @@ class Pharaoh {
   final String role;
   final List<String> facts;
   final String imagePath;
+  final String? imageSourceUrl;
 }

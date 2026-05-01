@@ -86,6 +86,16 @@ class _PharaohsScreenState extends State<PharaohsScreen> {
                           description:
                               'Repères essentiels pour comprendre la place de ${p.name} dans l’histoire égyptienne.',
                           imagePath: p.imagePath,
+                          imageSourceUrl: p.imageSourceUrl,
+                          galleryImages: pharaohsData
+                              .map((e) => e.imagePath)
+                              .toList(),
+                          galleryTitles: pharaohsData
+                              .map((e) => e.name)
+                              .toList(),
+                          galleryIndex: pharaohsData.indexWhere(
+                            (e) => e.id == p.id,
+                          ),
                           extraLines: p.facts,
                           isFavorite: isFav,
                           onFavoriteToggle: () async {

@@ -5,6 +5,7 @@ class Monument {
     required this.location,
     required this.importance,
     required this.imagePath,
+    this.imageSourceUrl,
   });
 
   final String id;
@@ -12,4 +13,5 @@ class Monument {
   final String location;
   final String importance;
   final String imagePath;
+  final String? imageSourceUrl;
 }

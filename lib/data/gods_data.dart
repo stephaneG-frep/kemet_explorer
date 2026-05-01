@@ -8,7 +8,8 @@ const godsData = [
     symbol: 'Disque solaire',
     description:
         'Râ est la grande divinité solaire. Pour les anciens Égyptiens, il traverse le ciel dans sa barque le jour puis affronte les forces du chaos durant la nuit avant de renaître à l’aube.',
-    imagePath: 'assets/images/ra.jpg',
+    imagePath: 'assets/images/ra.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Ra',
   ),
   EgyptianGod(
     id: 'isis',
@@ -17,7 +18,8 @@ const godsData = [
     symbol: 'Trône',
     description:
         'Isis incarne la protection, la fidélité et la connaissance des rites sacrés. Son culte très populaire s’est diffusé bien au-delà de l’Égypte.',
-    imagePath: 'assets/images/isis.jpg',
+    imagePath: 'assets/images/isis.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Isis',
   ),
   EgyptianGod(
     id: 'osiris',
@@ -26,7 +28,8 @@ const godsData = [
     symbol: 'Crosse et fouet',
     description:
         'Osiris règne sur le royaume des morts et représente l’espérance d’une nouvelle vie. Il est aussi associé aux cycles agricoles et à la fertilité du Nil.',
-    imagePath: 'assets/images/osiris.jpg',
+    imagePath: 'assets/images/osiris.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Osiris',
   ),
   EgyptianGod(
     id: 'horus',
@@ -35,7 +38,8 @@ const godsData = [
     symbol: 'Faucon',
     description:
         'Horus protège le pharaon vivant et symbolise l’ordre royal. Son œil est devenu un signe majeur de protection et de guérison.',
-    imagePath: 'assets/images/horus.jpg',
+    imagePath: 'assets/images/horus.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Horus',
   ),
   EgyptianGod(
     id: 'anubis',
@@ -44,6 +48,7 @@ const godsData = [
     symbol: 'Chacal',
     description:
         'Anubis veille aux rites funéraires et guide les défunts. Il est lié à la pesée du cœur, moment clé du jugement dans l’au-delà.',
-    imagePath: 'assets/images/anubis.jpg',
+    imagePath: 'assets/images/anubis.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Anubis',
   ),
 ];

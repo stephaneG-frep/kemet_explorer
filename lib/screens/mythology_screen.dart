@@ -84,6 +84,14 @@ class _MythologyScreenState extends State<MythologyScreen> {
                           subtitle: '${god.role} • Symbole: ${god.symbol}',
                           description: god.description,
                           imagePath: god.imagePath,
+                          imageSourceUrl: god.imageSourceUrl,
+                          galleryImages: godsData
+                              .map((e) => e.imagePath)
+                              .toList(),
+                          galleryTitles: godsData.map((e) => e.name).toList(),
+                          galleryIndex: godsData.indexWhere(
+                            (e) => e.id == god.id,
+                          ),
                           isFavorite: isFav,
                           onFavoriteToggle: () async {
                             await widget.onToggleFavorite(god.id);

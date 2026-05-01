@@ -11,7 +11,8 @@ const pharaohsData = [
       'Commande la plus grande pyramide de Gizeh.',
       'Son programme monumental incarne la puissance royale de l’Ancien Empire.',
     ],
-    imagePath: 'assets/images/kheops.jpg',
+    imagePath: 'assets/images/kheops.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Khufu',
   ),
   Pharaoh(
     id: 'hatchepsout',
@@ -23,7 +24,8 @@ const pharaohsData = [
       'Développe commerce et architecture monumentale.',
       'Le temple de Deir el-Bahari reste un symbole de son règne.',
     ],
-    imagePath: 'assets/images/hatchepsout.jpg',
+    imagePath: 'assets/images/hatchepsout.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Hatshepsut',
   ),
   Pharaoh(
     id: 'akhenaton',
@@ -35,7 +37,8 @@ const pharaohsData = [
       'Fonde la ville d’Akhetaton.',
       'Sa réforme marque une rupture majeure dans l’histoire religieuse égyptienne.',
     ],
-    imagePath: 'assets/images/akhenaton.jpg',
+    imagePath: 'assets/images/akhenaton.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Akhenaten',
   ),
   Pharaoh(
     id: 'toutankhamon',
@@ -47,7 +50,8 @@ const pharaohsData = [
       'Tombeau découvert presque intact en 1922.',
       'Sa découverte a profondément renouvelé l’égyptologie moderne.',
     ],
-    imagePath: 'assets/images/toutankhamon.jpg',
+    imagePath: 'assets/images/toutankhamon.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Tutankhamun',
   ),
   Pharaoh(
     id: 'ramses2',
@@ -59,7 +63,8 @@ const pharaohsData = [
       'Associe son image à de nombreux monuments.',
       'Reste une figure emblématique de la puissance pharaonique.',
     ],
-    imagePath: 'assets/images/ramses2.jpg',
+    imagePath: 'assets/images/ramses2.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Ramesses_II',
   ),
   Pharaoh(
     id: 'cleopatre7',
@@ -71,6 +76,7 @@ const pharaohsData = [
       'Figure politique majeure de l’Antiquité.',
       'Sa mort en 30 av. J.-C. marque la fin de l’Égypte pharaonique indépendante.',
     ],
-    imagePath: 'assets/images/cleopatre7.jpg',
+    imagePath: 'assets/images/cleopatre7.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Cleopatra',
   ),
 ];

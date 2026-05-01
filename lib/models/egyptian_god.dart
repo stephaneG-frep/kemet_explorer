@@ -6,6 +6,7 @@ class EgyptianGod {
     required this.symbol,
     required this.description,
     required this.imagePath,
+    this.imageSourceUrl,
   });
 
   final String id;
@@ -14,4 +15,5 @@ class EgyptianGod {
   final String symbol;
   final String description;
   final String imagePath;
+  final String? imageSourceUrl;
 }

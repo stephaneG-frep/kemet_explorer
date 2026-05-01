@@ -80,6 +80,16 @@ class _MonumentsScreenState extends State<MonumentsScreen> {
                           subtitle: m.location,
                           description: m.importance,
                           imagePath: m.imagePath,
+                          imageSourceUrl: m.imageSourceUrl,
+                          galleryImages: monumentsData
+                              .map((e) => e.imagePath)
+                              .toList(),
+                          galleryTitles: monumentsData
+                              .map((e) => e.name)
+                              .toList(),
+                          galleryIndex: monumentsData.indexWhere(
+                            (e) => e.id == m.id,
+                          ),
                         ),
                       ),
                     ),

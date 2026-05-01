@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../data/gods_data.dart';
+import '../data/monuments_data.dart';
+import '../data/pharaohs_data.dart';
 import '../data/quiz_data.dart';
 import '../services/local_storage_service.dart';
 import '../widgets/home_category_card.dart';
@@ -28,6 +31,20 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _loadState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _warmImageCache();
+    });
+  }
+
+  Future<void> _warmImageCache() async {
+    final all = [
+      ...godsData.map((e) => e.imagePath),
+      ...pharaohsData.map((e) => e.imagePath),
+      ...monumentsData.map((e) => e.imagePath),
+    ];
+    for (final path in all) {
+      await precacheImage(AssetImage(path), context);
+    }
   }
 
   Future<void> _loadState() async {
