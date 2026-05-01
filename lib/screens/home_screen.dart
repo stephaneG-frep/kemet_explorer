@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/quiz_data.dart';
 import '../services/local_storage_service.dart';
 import '../widgets/home_category_card.dart';
 import 'history_screen.dart';
@@ -21,20 +22,23 @@ class _HomeScreenState extends State<HomeScreen> {
   final storage = LocalStorageService();
   final Set<String> favorites = <String>{};
   bool loadingFavorites = true;
+  int bestQuizScore = 0;
 
   @override
   void initState() {
     super.initState();
-    _loadFavorites();
+    _loadState();
   }
 
-  Future<void> _loadFavorites() async {
-    final saved = await storage.loadFavorites();
+  Future<void> _loadState() async {
+    final savedFavorites = await storage.loadFavorites();
+    final savedBestScore = await storage.loadBestQuizScore();
     if (!mounted) return;
     setState(() {
       favorites
         ..clear()
-        ..addAll(saved);
+        ..addAll(savedFavorites);
+      bestQuizScore = savedBestScore;
       loadingFavorites = false;
     });
   }
@@ -48,6 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     });
     await storage.saveFavorites(favorites);
+  }
+
+  Future<void> refreshBestScore() async {
+    bestQuizScore = await storage.loadBestQuizScore();
+    if (!mounted) return;
+    setState(() {});
   }
 
   Route<T> _buildRoute<T>(Widget page) {
@@ -75,6 +85,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final quizRatio = bestQuizScore / quizData.length;
+    final progress = ((favorites.length / 12) + quizRatio).clamp(0, 1) / 2;
+
+    final badges = <String>[
+      if (favorites.length >= 3) 'Collectionneur',
+      if (favorites.length >= 6) 'Archiviste',
+      if (bestQuizScore >= 3) 'Scribe',
+      if (bestQuizScore >= 5) 'Grand prêtre',
+    ];
+
     final categories = [
       (
         'Mythologie',
@@ -112,7 +132,12 @@ class _HomeScreenState extends State<HomeScreen> {
         Colors.indigo.shade700,
         const TimelineScreen(),
       ),
-      ('Quiz', Icons.quiz_rounded, Colors.green.shade700, const QuizScreen()),
+      (
+        'Quiz',
+        Icons.quiz_rounded,
+        Colors.green.shade700,
+        QuizScreen(onQuizFinished: refreshBestScore),
+      ),
     ];
 
     return Scaffold(
@@ -133,7 +158,54 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Mythes, histoire, pharaons et plus encore.',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 12),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Icon(Icons.insights_rounded),
+                              const SizedBox(width: 8),
+                              Text(
+                                'Progression',
+                                style: Theme.of(context).textTheme.titleMedium,
+                              ),
+                              const Spacer(),
+                              Text('${(progress * 100).round()}%'),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          TweenAnimationBuilder<double>(
+                            tween: Tween(begin: 0, end: progress),
+                            duration: const Duration(milliseconds: 600),
+                            builder: (context, value, _) =>
+                                LinearProgressIndicator(
+                                  value: value,
+                                  minHeight: 8,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Favoris: ${favorites.length} • Meilleur quiz: $bestQuizScore/${quizData.length}',
+                          ),
+                          if (badges.isNotEmpty) ...[
+                            const SizedBox(height: 8),
+                            Wrap(
+                              spacing: 8,
+                              children: badges
+                                  .map((b) => Chip(label: Text(b)))
+                                  .toList(),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
                   Expanded(
                     child: GridView.builder(
                       itemCount: categories.length,
@@ -146,12 +218,25 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                       itemBuilder: (context, index) {
                         final item = categories[index];
-                        return HomeCategoryCard(
-                          title: item.$1,
-                          icon: item.$2,
-                          color: item.$3,
-                          onTap: () =>
-                              Navigator.of(context).push(_buildRoute(item.$4)),
+                        return TweenAnimationBuilder<double>(
+                          tween: Tween(begin: 0, end: 1),
+                          duration: Duration(milliseconds: 240 + (index * 60)),
+                          curve: Curves.easeOut,
+                          builder: (context, value, child) => Opacity(
+                            opacity: value,
+                            child: Transform.translate(
+                              offset: Offset(0, (1 - value) * 14),
+                              child: child,
+                            ),
+                          ),
+                          child: HomeCategoryCard(
+                            title: item.$1,
+                            icon: item.$2,
+                            color: item.$3,
+                            onTap: () => Navigator.of(
+                              context,
+                            ).push(_buildRoute(item.$4)),
+                          ),
                         );
                       },
                     ),

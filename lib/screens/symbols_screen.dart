@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../data/symbols_data.dart';
-import 'detail_screen.dart';
 import '../widgets/info_card.dart';
+import 'detail_screen.dart';
 
 class SymbolsScreen extends StatefulWidget {
   const SymbolsScreen({super.key});
@@ -13,16 +13,22 @@ class SymbolsScreen extends StatefulWidget {
 
 class _SymbolsScreenState extends State<SymbolsScreen> {
   String query = '';
+  String selectedMeaning = 'Tous';
 
   @override
   Widget build(BuildContext context) {
-    final filtered = symbolsData
-        .where(
-          (s) =>
-              s.name.toLowerCase().contains(query.toLowerCase()) ||
-              s.meaning.toLowerCase().contains(query.toLowerCase()),
-        )
-        .toList();
+    final meanings = <String>{
+      'Tous',
+      ...symbolsData.map((s) => s.meaning),
+    }.toList();
+    final filtered = symbolsData.where((s) {
+      final matchesQuery =
+          s.name.toLowerCase().contains(query.toLowerCase()) ||
+          s.meaning.toLowerCase().contains(query.toLowerCase());
+      final matchesMeaning =
+          selectedMeaning == 'Tous' || s.meaning == selectedMeaning;
+      return matchesQuery && matchesMeaning;
+    }).toList();
 
     return Scaffold(
       appBar: AppBar(title: const Text('Kemet Explorer')),
@@ -36,6 +42,25 @@ class _SymbolsScreenState extends State<SymbolsScreen> {
                 prefixIcon: Icon(Icons.search_rounded),
               ),
               onChanged: (value) => setState(() => query = value),
+            ),
+            const SizedBox(height: 8),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: meanings
+                    .map(
+                      (meaning) => Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ChoiceChip(
+                          label: Text(meaning),
+                          selected: selectedMeaning == meaning,
+                          onSelected: (_) =>
+                              setState(() => selectedMeaning = meaning),
+                        ),
+                      ),
+                    )
+                    .toList(),
+              ),
             ),
             const SizedBox(height: 12),
             Expanded(

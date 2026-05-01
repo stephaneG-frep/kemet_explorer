@@ -1,20 +1,37 @@
 import 'package:flutter/material.dart';
 
 import '../data/quiz_data.dart';
+import '../services/local_storage_service.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+  const QuizScreen({super.key, this.onQuizFinished});
+
+  final Future<void> Function()? onQuizFinished;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  final storage = LocalStorageService();
   int current = 0;
   int score = 0;
+  int bestScore = 0;
   bool finished = false;
 
-  void selectAnswer(int index) {
+  @override
+  void initState() {
+    super.initState();
+    _loadBestScore();
+  }
+
+  Future<void> _loadBestScore() async {
+    bestScore = await storage.loadBestQuizScore();
+    if (!mounted) return;
+    setState(() {});
+  }
+
+  Future<void> selectAnswer(int index) async {
     if (finished) return;
 
     if (quizData[current].correctIndex == index) {
@@ -22,6 +39,11 @@ class _QuizScreenState extends State<QuizScreen> {
     }
 
     if (current == quizData.length - 1) {
+      await storage.saveBestQuizScore(score);
+      bestScore = await storage.loadBestQuizScore();
+      if (widget.onQuizFinished != null) {
+        await widget.onQuizFinished!.call();
+      }
       setState(() => finished = true);
     } else {
       setState(() => current++);
@@ -62,6 +84,8 @@ class _QuizScreenState extends State<QuizScreen> {
                         'Score final: $score / ${quizData.length}',
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
+                      const SizedBox(height: 8),
+                      Text('Meilleur score: $bestScore / ${quizData.length}'),
                       const SizedBox(height: 10),
                       Text(resultMessage, textAlign: TextAlign.center),
                       const SizedBox(height: 14),

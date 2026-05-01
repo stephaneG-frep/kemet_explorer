@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../data/gods_data.dart';
-import 'detail_screen.dart';
 import '../widgets/info_card.dart';
+import 'detail_screen.dart';
 
 class MythologyScreen extends StatefulWidget {
   const MythologyScreen({
@@ -20,16 +20,18 @@ class MythologyScreen extends StatefulWidget {
 
 class _MythologyScreenState extends State<MythologyScreen> {
   String query = '';
+  String selectedRole = 'Tous';
 
   @override
   Widget build(BuildContext context) {
-    final filtered = godsData
-        .where(
-          (g) =>
-              g.name.toLowerCase().contains(query.toLowerCase()) ||
-              g.role.toLowerCase().contains(query.toLowerCase()),
-        )
-        .toList();
+    final roles = <String>{'Tous', ...godsData.map((g) => g.role)}.toList();
+    final filtered = godsData.where((g) {
+      final matchesQuery =
+          g.name.toLowerCase().contains(query.toLowerCase()) ||
+          g.role.toLowerCase().contains(query.toLowerCase());
+      final matchesRole = selectedRole == 'Tous' || g.role == selectedRole;
+      return matchesQuery && matchesRole;
+    }).toList();
 
     return Scaffold(
       appBar: AppBar(title: const Text('Kemet Explorer')),
@@ -43,6 +45,25 @@ class _MythologyScreenState extends State<MythologyScreen> {
                 prefixIcon: Icon(Icons.search_rounded),
               ),
               onChanged: (value) => setState(() => query = value),
+            ),
+            const SizedBox(height: 8),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: roles
+                    .map(
+                      (role) => Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ChoiceChip(
+                          label: Text(role),
+                          selected: selectedRole == role,
+                          onSelected: (_) =>
+                              setState(() => selectedRole = role),
+                        ),
+                      ),
+                    )
+                    .toList(),
+              ),
             ),
             const SizedBox(height: 12),
             Expanded(

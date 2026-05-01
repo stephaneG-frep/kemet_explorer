@@ -6,23 +6,25 @@ const historyData = [
     name: 'Ancien Empire',
     dateRange: 'c. 2686-2181 av. J.-C.',
     description:
-        'Période des grandes pyramides et d’un pouvoir royal centralisé.',
+        'Période des grandes pyramides, d’une administration centralisée et d’une forte mise en scène du pouvoir pharaonique.',
   ),
   HistoricalPeriod(
     name: 'Moyen Empire',
     dateRange: 'c. 2055-1650 av. J.-C.',
-    description: 'Retour de la stabilité politique et essor culturel.',
+    description:
+        'Temps de réunification et de renouveau culturel. Les textes littéraires et les politiques d’aménagement se développent.',
   ),
   HistoricalPeriod(
     name: 'Nouvel Empire',
     dateRange: 'c. 1550-1069 av. J.-C.',
     description:
-        'Apogée militaire, diplomatique et artistique de l’Égypte antique.',
+        'Apogée militaire et diplomatique. L’Égypte rayonne grâce à de grands pharaons, des temples majeurs et des échanges internationaux.',
   ),
   HistoricalPeriod(
     name: 'Basse époque',
     dateRange: 'c. 664-332 av. J.-C.',
-    description: 'Période de transformations et d’influences extérieures.',
+    description:
+        'Période d’adaptations politiques et d’influences extérieures, tout en conservant des traditions religieuses profondes.',
   ),
 ];
 

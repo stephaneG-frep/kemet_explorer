@@ -9,6 +9,7 @@ const pharaohsData = [
     facts: [
       'Règne vers 2589-2566 av. J.-C.',
       'Commande la plus grande pyramide de Gizeh.',
+      'Son programme monumental incarne la puissance royale de l’Ancien Empire.',
     ],
     imagePath: 'assets/images/kheops.jpg',
   ),
@@ -20,6 +21,7 @@ const pharaohsData = [
     facts: [
       'Une des rares femmes pharaons.',
       'Développe commerce et architecture monumentale.',
+      'Le temple de Deir el-Bahari reste un symbole de son règne.',
     ],
     imagePath: 'assets/images/hatchepsout.jpg',
   ),
@@ -28,7 +30,11 @@ const pharaohsData = [
     name: 'Akhenaton',
     era: 'Nouvel Empire',
     role: 'Réformateur religieux',
-    facts: ['Favorise le culte d’Aton.', 'Fonde la ville d’Akhetaton.'],
+    facts: [
+      'Favorise le culte d’Aton.',
+      'Fonde la ville d’Akhetaton.',
+      'Sa réforme marque une rupture majeure dans l’histoire religieuse égyptienne.',
+    ],
     imagePath: 'assets/images/akhenaton.jpg',
   ),
   Pharaoh(
@@ -39,6 +45,7 @@ const pharaohsData = [
     facts: [
       'Monte sur le trône très jeune.',
       'Tombeau découvert presque intact en 1922.',
+      'Sa découverte a profondément renouvelé l’égyptologie moderne.',
     ],
     imagePath: 'assets/images/toutankhamon.jpg',
   ),
@@ -50,6 +57,7 @@ const pharaohsData = [
     facts: [
       'Long règne de plus de 60 ans.',
       'Associe son image à de nombreux monuments.',
+      'Reste une figure emblématique de la puissance pharaonique.',
     ],
     imagePath: 'assets/images/ramses2.jpg',
   ),
@@ -61,6 +69,7 @@ const pharaohsData = [
     facts: [
       'Règne dans un contexte romain.',
       'Figure politique majeure de l’Antiquité.',
+      'Sa mort en 30 av. J.-C. marque la fin de l’Égypte pharaonique indépendante.',
     ],
     imagePath: 'assets/images/cleopatre7.jpg',
   ),
