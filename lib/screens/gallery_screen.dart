@@ -37,7 +37,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${_index + 1}/${widget.images.length} • ${widget.titles[_index]}'),
+        title: Text(
+          '${_index + 1}/${widget.images.length} • ${widget.titles[_index]}',
+        ),
       ),
       body: PageView.builder(
         controller: _controller,

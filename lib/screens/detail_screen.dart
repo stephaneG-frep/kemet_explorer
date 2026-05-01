@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/section_title.dart';
 import 'gallery_screen.dart';
+import '../services/audio_narration_service.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({
@@ -63,6 +64,12 @@ class DetailScreen extends StatelessWidget {
               onPressed: _openSource,
               icon: const Icon(Icons.link_rounded),
             ),
+          IconButton(
+            onPressed: () => AudioNarrationService.instance.speak(
+              '$title. $subtitle. $description',
+            ),
+            icon: const Icon(Icons.volume_up_rounded),
+          ),
           if (onFavoriteToggle != null)
             IconButton(
               onPressed: onFavoriteToggle,

@@ -5,7 +5,9 @@ import '../data/monuments_data.dart';
 import '../data/pharaohs_data.dart';
 import '../data/quiz_data.dart';
 import '../services/local_storage_service.dart';
+import '../services/pdf_export_service.dart';
 import '../widgets/home_category_card.dart';
+import 'guided_tour_screen.dart';
 import 'history_screen.dart';
 import 'monuments_screen.dart';
 import 'mythology_screen.dart';
@@ -23,6 +25,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final storage = LocalStorageService();
+  final pdfExport = PdfExportService();
   final Set<String> favorites = <String>{};
   bool loadingFavorites = true;
   int bestQuizScore = 0;
@@ -155,10 +158,34 @@ class _HomeScreenState extends State<HomeScreen> {
         Colors.green.shade700,
         QuizScreen(onQuizFinished: refreshBestScore),
       ),
+      (
+        'Parcours guidé',
+        Icons.route_rounded,
+        Colors.deepOrange.shade600,
+        GuidedTourScreen(
+          favorites: favorites,
+          onToggleFavorite: toggleFavorite,
+        ),
+      ),
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Kemet Explorer')),
+      appBar: AppBar(
+        title: const Text('Kemet Explorer'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.picture_as_pdf_rounded),
+            onPressed: () => pdfExport.exportKemetBooklet(
+              title: 'Carnet de visite Kemet',
+              sections: [
+                'Favoris enregistrés: ${favorites.length}',
+                'Meilleur score Quiz: $bestQuizScore/${quizData.length}',
+                'Étapes conseillées: Histoire > Mythologie > Monuments > Chronologie > Pharaons > Symboles',
+              ],
+            ),
+          ),
+        ],
+      ),
       body: loadingFavorites
           ? const Center(child: CircularProgressIndicator())
           : Padding(
