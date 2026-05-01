@@ -77,6 +77,7 @@ class _PharaohsScreenState extends State<PharaohsScreen> {
                     icon: isFav
                         ? Icons.favorite
                         : Icons.workspace_premium_rounded,
+                    imagePath: p.imagePath,
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => DetailScreen(

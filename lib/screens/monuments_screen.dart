@@ -72,6 +72,7 @@ class _MonumentsScreenState extends State<MonumentsScreen> {
                     title: m.name,
                     subtitle: '${m.location} • ${m.importance}',
                     icon: Icons.temple_buddhist_rounded,
+                    imagePath: m.imagePath,
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => DetailScreen(

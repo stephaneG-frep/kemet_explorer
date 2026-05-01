@@ -76,6 +76,7 @@ class _MythologyScreenState extends State<MythologyScreen> {
                     title: god.name,
                     subtitle: god.role,
                     icon: isFav ? Icons.favorite : Icons.auto_awesome_rounded,
+                    imagePath: god.imagePath,
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => DetailScreen(

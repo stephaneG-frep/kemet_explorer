@@ -45,7 +45,7 @@ class DetailScreen extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: SizedBox(
-                height: 220,
+                height: 250,
                 child: _AssetImageWithFallback(imagePath: imagePath!),
               ),
             ),
@@ -92,9 +92,16 @@ class _AssetImageWithFallback extends StatelessWidget {
       future: rootBundle.load(imagePath),
       builder: (context, snapshot) {
         if (snapshot.hasData && snapshot.data!.lengthInBytes > 400) {
-          return Image.asset(imagePath, fit: BoxFit.cover);
+          return Container(
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
+            child: InteractiveViewer(
+              minScale: 1,
+              maxScale: 3,
+              child: Image.asset(imagePath, fit: BoxFit.contain),
+            ),
+          );
         }
-        return _ImageFallback(title: 'Image à ajouter');
+        return const _ImageFallback(title: 'Image à ajouter');
       },
     );
   }
