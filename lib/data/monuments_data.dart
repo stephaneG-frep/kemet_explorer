@@ -11,6 +11,24 @@ const monumentsData = [
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Giza_pyramid_complex',
   ),
   Monument(
+    id: 'sphinx',
+    name: 'Sphinx',
+    location: 'Gizeh',
+    importance:
+        'Statue emblématique associant force royale et mystère. Elle gardait symboliquement l’accès aux monuments funéraires.',
+    imagePath: 'assets/images/sphinx.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza',
+  ),
+  Monument(
+    id: 'saqqarah',
+    name: 'Nécropole de Saqqarah',
+    location: 'Memphis',
+    importance:
+        'Site majeur avec la pyramide à degrés de Djéser, étape clé de l’évolution de l’architecture pyramidale.',
+    imagePath: 'assets/images/gizeh.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Saqqara',
+  ),
+  Monument(
     id: 'karnak',
     name: 'Karnak',
     location: 'Thèbes',
@@ -29,15 +47,6 @@ const monumentsData = [
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Luxor_Temple',
   ),
   Monument(
-    id: 'abou_simbel',
-    name: 'Abou Simbel',
-    location: 'Nubie',
-    importance:
-        'Temples monumentaux de Ramsès II creusés dans la roche. Leur déplacement au XXe siècle a été un exploit patrimonial.',
-    imagePath: 'assets/images/abou_simbel.webp',
-    imageSourceUrl: 'https://en.wikipedia.org/wiki/Abu_Simbel',
-  ),
-  Monument(
     id: 'vallee_rois',
     name: 'Vallée des Rois',
     location: 'Rive ouest de Louxor',
@@ -47,12 +56,48 @@ const monumentsData = [
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Valley_of_the_Kings',
   ),
   Monument(
-    id: 'sphinx',
-    name: 'Sphinx',
-    location: 'Gizeh',
+    id: 'deir_el_bahari',
+    name: 'Deir el-Bahari',
+    location: 'Rive ouest de Louxor',
     importance:
-        'Statue emblématique associant force royale et mystère. Elle gardait symboliquement l’accès aux monuments funéraires.',
-    imagePath: 'assets/images/sphinx.webp',
-    imageSourceUrl: 'https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza',
+        'Ensemble funéraire spectaculaire, notamment le temple d’Hatchepsout, remarquable par ses terrasses monumentales.',
+    imagePath: 'assets/images/hatchepsout.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Deir_el-Bahari',
+  ),
+  Monument(
+    id: 'abou_simbel',
+    name: 'Abou Simbel',
+    location: 'Nubie',
+    importance:
+        'Temples monumentaux de Ramsès II creusés dans la roche. Leur déplacement au XXe siècle a été un exploit patrimonial.',
+    imagePath: 'assets/images/abou_simbel.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Abu_Simbel',
+  ),
+  Monument(
+    id: 'philae',
+    name: 'Philae',
+    location: 'Assouan',
+    importance:
+        'Sanctuaire célèbre d’Isis, déplacé pour être préservé après la construction du haut barrage d’Assouan.',
+    imagePath: 'assets/images/isis.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Philae',
+  ),
+  Monument(
+    id: 'edfou',
+    name: 'Temple d’Edfou',
+    location: 'Haute-Égypte',
+    importance:
+        'Un des temples les mieux conservés d’Égypte, dédié à Horus, avec une iconographie religieuse très riche.',
+    imagePath: 'assets/images/horus.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Temple_of_Edfu',
+  ),
+  Monument(
+    id: 'denderah',
+    name: 'Temple de Dendérah',
+    location: 'Haute-Égypte',
+    importance:
+        'Grand centre cultuel d’Hathor, connu pour ses reliefs, son décor astronomique et son état de conservation.',
+    imagePath: 'assets/images/isis.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Dendera_Temple_complex',
   ),
 ];
