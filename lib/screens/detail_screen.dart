@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../services/audio_narration_service.dart';
 import '../widgets/section_title.dart';
 import 'gallery_screen.dart';
-import '../services/audio_narration_service.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({
@@ -91,13 +91,26 @@ class DetailScreen extends StatelessWidget {
               ),
             ),
           const SizedBox(height: 14),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(14),
-              child: Text(description),
-            ),
+          _LearningCard(
+            title: 'Essentiel',
+            text: description,
+            icon: Icons.lightbulb_outline_rounded,
           ),
-          if (extraLines.isNotEmpty) ...[
+          const SizedBox(height: 10),
+          _LearningCard(
+            title: 'Anecdote',
+            text: extraLines.isNotEmpty
+                ? extraLines.first
+                : 'Un détail marquant: $subtitle',
+            icon: Icons.auto_awesome_rounded,
+          ),
+          const SizedBox(height: 10),
+          _LearningCard(
+            title: 'À retenir',
+            text: "$title est un repere cle pour comprendre l'Egypte antique.",
+            icon: Icons.bookmark_added_outlined,
+          ),
+          if (extraLines.length > 1) ...[
             const SizedBox(height: 12),
             Card(
               child: Padding(
@@ -105,6 +118,7 @@ class DetailScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: extraLines
+                      .skip(1)
                       .map(
                         (line) => Padding(
                           padding: const EdgeInsets.only(bottom: 8),
@@ -178,6 +192,44 @@ class _ImageFallback extends StatelessWidget {
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w700,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _LearningCard extends StatelessWidget {
+  const _LearningCard({
+    required this.title,
+    required this.text,
+    required this.icon,
+  });
+
+  final String title;
+  final String text;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(icon),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: Theme.of(context).textTheme.titleMedium),
+                  const SizedBox(height: 5),
+                  Text(text),
+                ],
               ),
             ),
           ],

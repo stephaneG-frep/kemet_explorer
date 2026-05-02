@@ -25,7 +25,7 @@ const monumentsData = [
     location: 'Memphis',
     importance:
         'Site majeur avec la pyramide à degrés de Djéser, étape clé de l’évolution de l’architecture pyramidale.',
-    imagePath: 'assets/images/gizeh.webp',
+    imagePath: 'assets/images/saqqarah_v2.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Saqqara',
   ),
   Monument(
@@ -61,7 +61,7 @@ const monumentsData = [
     location: 'Rive ouest de Louxor',
     importance:
         'Ensemble funéraire spectaculaire, notamment le temple d’Hatchepsout, remarquable par ses terrasses monumentales.',
-    imagePath: 'assets/images/hatchepsout.webp',
+    imagePath: 'assets/images/deir_el_bahari.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Deir_el-Bahari',
   ),
   Monument(
@@ -79,7 +79,7 @@ const monumentsData = [
     location: 'Assouan',
     importance:
         'Sanctuaire célèbre d’Isis, déplacé pour être préservé après la construction du haut barrage d’Assouan.',
-    imagePath: 'assets/images/isis.webp',
+    imagePath: 'assets/images/philae.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Philae',
   ),
   Monument(
@@ -88,7 +88,7 @@ const monumentsData = [
     location: 'Haute-Égypte',
     importance:
         'Un des temples les mieux conservés d’Égypte, dédié à Horus, avec une iconographie religieuse très riche.',
-    imagePath: 'assets/images/horus.webp',
+    imagePath: 'assets/images/edfou.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Temple_of_Edfu',
   ),
   Monument(
@@ -97,7 +97,7 @@ const monumentsData = [
     location: 'Haute-Égypte',
     importance:
         'Grand centre cultuel d’Hathor, connu pour ses reliefs, son décor astronomique et son état de conservation.',
-    imagePath: 'assets/images/isis.webp',
+    imagePath: 'assets/images/denderah.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Dendera_Temple_complex',
   ),
 ];

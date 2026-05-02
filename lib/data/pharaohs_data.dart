@@ -24,7 +24,7 @@ const pharaohsData = [
       'Construit sa pyramide à Abou Rawash.',
       'Contribue à la continuité dynastique de la IVe dynastie.',
     ],
-    imagePath: 'assets/images/kheops.webp',
+    imagePath: 'assets/images/djedefre.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Djedefre',
   ),
   Pharaoh(
@@ -37,7 +37,7 @@ const pharaohsData = [
       'Associe son nom à la deuxième grande pyramide de Gizeh.',
       'Traditionnellement lié au Sphinx dans la mémoire historique.',
     ],
-    imagePath: 'assets/images/kheops.webp',
+    imagePath: 'assets/images/khafre.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Khafre',
   ),
   Pharaoh(
@@ -63,7 +63,7 @@ const pharaohsData = [
       'Consolide l’influence égyptienne au Levant.',
       'Souvent présenté comme un grand chef militaire de l’Antiquité.',
     ],
-    imagePath: 'assets/images/hatchepsout.webp',
+    imagePath: 'assets/images/thoutmosis3.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Thutmose_III',
   ),
   Pharaoh(
@@ -102,7 +102,7 @@ const pharaohsData = [
       'Renforce l’autorité royale en Nubie et au Levant.',
       'Laisse des monuments remarquables, notamment à Abydos.',
     ],
-    imagePath: 'assets/images/ramses2.webp',
+    imagePath: 'assets/images/seti1.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Seti_I',
   ),
   Pharaoh(
@@ -128,7 +128,7 @@ const pharaohsData = [
       'Connu pour les inscriptions de Médinet Habou.',
       'Son règne marque l’un des derniers grands moments du Nouvel Empire.',
     ],
-    imagePath: 'assets/images/ramses2.webp',
+    imagePath: 'assets/images/ramses3.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ramesses_III',
   ),
   Pharaoh(
@@ -141,7 +141,7 @@ const pharaohsData = [
       'Contribue à rétablir l’unité politique de l’Égypte.',
       'Ouvre une période de renaissance culturelle.',
     ],
-    imagePath: 'assets/images/cleopatre7.webp',
+    imagePath: 'assets/images/psammetique1_v2.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Psamtik_I',
   ),
   Pharaoh(

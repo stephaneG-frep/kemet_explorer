@@ -58,7 +58,7 @@ const godsData = [
     symbol: 'Vache sacrée et sistre',
     description:
         'Hathor est liée à la fête, à la féminité et à la protection maternelle. Elle est aussi associée à l’accueil des défunts dans l’au-delà.',
-    imagePath: 'assets/images/isis.webp',
+    imagePath: 'assets/images/hathor.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Hathor',
   ),
   EgyptianGod(
@@ -68,7 +68,7 @@ const godsData = [
     symbol: 'Ibis',
     description:
         'Thot est patron des scribes, des sciences et du calcul du temps. Il incarne la sagesse et la justesse des paroles rituelles.',
-    imagePath: 'assets/images/horus.webp',
+    imagePath: 'assets/images/thoth.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Thoth',
   ),
   EgyptianGod(
@@ -78,7 +78,7 @@ const godsData = [
     symbol: 'Plume de Maât',
     description:
         'Maât représente l’équilibre du monde, la vérité et la justice. Son principe fonde la légitimité du pouvoir et le jugement des morts.',
-    imagePath: 'assets/images/ra.webp',
+    imagePath: 'assets/images/maat.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Maat',
   ),
   EgyptianGod(
@@ -88,7 +88,7 @@ const godsData = [
     symbol: 'Animal séthien',
     description:
         'Seth est associé au chaos, aux tempêtes et aux terres arides. Son rôle ambivalent participe à l’équilibre entre ordre et désordre.',
-    imagePath: 'assets/images/anubis.webp',
+    imagePath: 'assets/images/seth.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Set_(deity)',
   ),
   EgyptianGod(
@@ -98,7 +98,7 @@ const godsData = [
     symbol: 'Chatte',
     description:
         'Bastet est liée à la maison, à la protection et à la bienveillance. Son culte est très populaire dans la vie quotidienne.',
-    imagePath: 'assets/images/anubis.webp',
+    imagePath: 'assets/images/bastet.webp',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Bastet',
   ),
 ];
