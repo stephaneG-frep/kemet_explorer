@@ -15,7 +15,11 @@ class _TimelineScreenState extends State<TimelineScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final data = selected == 0 ? timelineData : pharaohTimelineData;
+    final data = switch (selected) {
+      0 => timelineData,
+      1 => pharaohTimelineData,
+      _ => abydosTimelineData,
+    };
 
     return Scaffold(
       appBar: AppBar(title: const Text('Kemet Explorer')),
@@ -38,6 +42,11 @@ class _TimelineScreenState extends State<TimelineScreen> {
                         icon: Icon(Icons.account_balance_rounded),
                         label: Text('Pharaons'),
                       ),
+                      ButtonSegment(
+                        value: 2,
+                        icon: Icon(Icons.list_alt_rounded),
+                        label: Text('Abydos'),
+                      ),
                     ],
                     selected: {selected},
                     onSelectionChanged: (set) {
@@ -48,6 +57,13 @@ class _TimelineScreenState extends State<TimelineScreen> {
               ],
             ),
           ),
+          if (selected == 2)
+            const Padding(
+              padding: EdgeInsets.fromLTRB(16, 0, 16, 6),
+              child: Text(
+                'Référence: ordre de la liste d’Abydos (Temple de Séthi Ier).',
+              ),
+            ),
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(16),
