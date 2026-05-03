@@ -13,6 +13,7 @@ import 'guided_tour_screen.dart';
 import 'history_screen.dart';
 import 'monuments_screen.dart';
 import 'mythology_screen.dart';
+import 'myth_stories_screen.dart';
 import 'pharaohs_screen.dart';
 import 'quiz_screen.dart';
 import 'symbols_screen.dart';
@@ -151,6 +152,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return const SymbolsScreen();
       case 'timeline':
         return const TimelineScreen();
+      case 'myth_stories':
+        return const MythStoriesScreen();
       case 'writings':
         return const WritingSystemsScreen();
       case 'guided':
@@ -215,6 +218,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.timeline_rounded,
         Colors.indigo.shade700,
         const TimelineScreen(),
+      ),
+      (
+        'myth_stories',
+        'Récits mythologiques',
+        Icons.menu_book_rounded,
+        Colors.deepPurple.shade400,
+        const MythStoriesScreen(),
       ),
       (
         'writings',
