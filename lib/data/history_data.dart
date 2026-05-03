@@ -3,6 +3,12 @@ import '../models/timeline_event.dart';
 
 const historyData = [
   HistoricalPeriod(
+    name: 'Période prédynastique',
+    dateRange: 'avant c. 3100 av. J.-C.',
+    description:
+        'Formation progressive des royaumes de Haute et Basse Égypte avant l’unification.',
+  ),
+  HistoricalPeriod(
     name: 'Ancien Empire',
     dateRange: 'c. 2686-2181 av. J.-C.',
     description:
@@ -21,28 +27,366 @@ const historyData = [
         'Apogée militaire et diplomatique. L’Égypte rayonne grâce à de grands pharaons, des temples majeurs et des échanges internationaux.',
   ),
   HistoricalPeriod(
+    name: 'Troisième Période intermédiaire',
+    dateRange: 'c. 1069-664 av. J.-C.',
+    description:
+        'Période de recompositions politiques entre pouvoirs régionaux et influences extérieures.',
+  ),
+  HistoricalPeriod(
     name: 'Basse époque',
     dateRange: 'c. 664-332 av. J.-C.',
     description:
         'Période d’adaptations politiques et d’influences extérieures, tout en conservant des traditions religieuses profondes.',
   ),
+  HistoricalPeriod(
+    name: 'Période ptolémaïque',
+    dateRange: '332-30 av. J.-C.',
+    description:
+        'Dynastie lagide installée après Alexandre, avec Alexandrie comme grand centre culturel.',
+  ),
+  HistoricalPeriod(
+    name: 'Période romaine',
+    dateRange: 'à partir de 30 av. J.-C.',
+    description:
+        'L’Égypte devient province romaine après la mort de Cléopâtre VII.',
+  ),
 ];
 
 const timelineData = [
+  TimelineEvent(
+    date: 'c. 4000-3200 av. J.-C.',
+    title: 'Cultures prédynastiques',
+    description:
+        'Développement de centres régionaux et premiers symboles du pouvoir.',
+  ),
+  TimelineEvent(
+    date: 'c. 3400-3200 av. J.-C.',
+    title: 'Naqada II et échanges',
+    description:
+        'Les échanges avec le Levant et la Nubie s’intensifient, préparant l’unification.',
+  ),
+  TimelineEvent(
+    date: 'c. 3200-3100 av. J.-C.',
+    title: 'Naqada III et proto-royaume',
+    description:
+        'Les élites royales se structurent, avec des symboles du pouvoir de plus en plus visibles.',
+  ),
   TimelineEvent(
     date: 'c. 3100 av. J.-C.',
     title: 'Unification de l’Égypte',
     description: 'Le roi Narmer unit la Haute et la Basse Égypte.',
   ),
   TimelineEvent(
-    date: 'c. 2580 av. J.-C.',
-    title: 'Pyramides de Gizeh',
+    date: 'c. 3000-2700 av. J.-C.',
+    title: 'Premières dynasties',
+    description:
+        'Mise en place de l’État pharaonique et des institutions royales.',
+  ),
+  TimelineEvent(
+    date: 'c. 2900-2700 av. J.-C.',
+    title: 'Nécropoles royales d’Abydos et Saqqarah',
+    description:
+        'Les tombes royales et élitaires structurent les grands centres funéraires du royaume.',
+  ),
+  TimelineEvent(
+    date: 'c. 2950 av. J.-C.',
+    title: 'Memphis devient un centre majeur',
+    description:
+        'La région memphite s’impose comme cœur politique et administratif du royaume.',
+  ),
+  TimelineEvent(
+    date: 'c. 2667-2648 av. J.-C.',
+    title: 'Pyramide à degrés de Djéser',
+    description: 'Saqqarah marque un tournant architectural majeur.',
+  ),
+  TimelineEvent(
+    date: 'c. 2600 av. J.-C.',
+    title: 'Complexes funéraires monumentaux',
+    description:
+        'Le culte royal se développe autour de vastes complexes et de temples funéraires.',
+  ),
+  TimelineEvent(
+    date: 'c. 2580-2500 av. J.-C.',
+    title: 'Âge des pyramides de Gizeh',
     description: 'Construction des grandes pyramides sous l’Ancien Empire.',
   ),
   TimelineEvent(
+    date: 'c. 2500 av. J.-C.',
+    title: 'Grand Sphinx de Gizeh',
+    description:
+        'Monument emblématique associé au complexe royal de la IVe dynastie.',
+  ),
+  TimelineEvent(
+    date: 'c. 2490-2350 av. J.-C.',
+    title: 'Expansion des cultes solaires',
+    description:
+        'Les rois de la Ve dynastie valorisent les sanctuaires liés au dieu Rê.',
+  ),
+  TimelineEvent(
+    date: 'c. 2400-2300 av. J.-C.',
+    title: 'Textes administratifs et gouverneurs locaux',
+    description:
+        'Les sources montrent une administration complexe et un rôle croissant des élites provinciales.',
+  ),
+  TimelineEvent(
+    date: 'c. 2181 av. J.-C.',
+    title: 'Fin de l’Ancien Empire',
+    description: 'Affaiblissement du pouvoir central et crise politique.',
+  ),
+  TimelineEvent(
+    date: 'c. 2181-2055 av. J.-C.',
+    title: 'Première Période intermédiaire',
+    description: 'Pouvoir fragmenté entre plusieurs centres régionaux.',
+  ),
+  TimelineEvent(
+    date: 'c. 2100 av. J.-C.',
+    title: 'Montée de Thèbes',
+    description:
+        'Les souverains thébains s’imposent progressivement dans la réunification du pays.',
+  ),
+  TimelineEvent(
+    date: 'c. 2055 av. J.-C.',
+    title: 'Réunification par Montouhotep II',
+    description: 'Début du Moyen Empire et retour de la stabilité.',
+  ),
+  TimelineEvent(
+    date: 'c. 1980-1900 av. J.-C.',
+    title: 'Consolidation de la frontière nubienne',
+    description:
+        'Forteresses et contrôle du Nil au sud pour sécuriser les échanges et les ressources.',
+  ),
+  TimelineEvent(
+    date: 'c. 1991 av. J.-C.',
+    title: 'Nouvelle capitale à Itjtaouy',
+    description:
+        'Les souverains du Moyen Empire réorganisent l’administration autour du Fayoum.',
+  ),
+  TimelineEvent(
+    date: 'c. 1970-1800 av. J.-C.',
+    title: 'Essor du Moyen Empire',
+    description: 'Renforcement administratif, économique et littéraire.',
+  ),
+  TimelineEvent(
+    date: 'c. 1900-1750 av. J.-C.',
+    title: 'Diffusion des textes sapientiaux',
+    description:
+        'Les œuvres littéraires et morales du Moyen Empire marquent durablement la culture égyptienne.',
+  ),
+  TimelineEvent(
+    date: 'c. 1870-1800 av. J.-C.',
+    title: 'Aménagement du Fayoum',
+    description:
+        'Grands travaux hydrauliques et agricoles dans la région du Fayoum.',
+  ),
+  TimelineEvent(
+    date: 'c. 1800-1700 av. J.-C.',
+    title: 'Transitions du Moyen vers le Second Intermédiaire',
+    description: 'Le pouvoir central s’affaiblit progressivement.',
+  ),
+  TimelineEvent(
+    date: 'c. 1650-1550 av. J.-C.',
+    title: 'Présence des Hyksôs',
+    description: 'Pouvoirs étrangers installés dans le Delta.',
+  ),
+  TimelineEvent(
+    date: 'c. 1600 av. J.-C.',
+    title: 'Avaris, capitale hyksôs',
+    description:
+        'Le Delta oriental devient un centre politique important du Second Intermédiaire.',
+  ),
+  TimelineEvent(
+    date: 'c. 1570-1550 av. J.-C.',
+    title: 'Campagnes thébaines de libération',
+    description:
+        'Les princes de Thèbes reprennent le nord et préparent la réunification.',
+  ),
+  TimelineEvent(
+    date: 'c. 1550 av. J.-C.',
+    title: 'Début du Nouvel Empire',
+    description:
+        'Ahmôsis Ier réunifie le pays et lance une période d’expansion.',
+  ),
+  TimelineEvent(
+    date: 'c. 1530-1500 av. J.-C.',
+    title: 'Réorganisation des temples d’Amon',
+    description:
+        'Le clergé thébain prend une place centrale dans l’idéologie du pouvoir royal.',
+  ),
+  TimelineEvent(
+    date: 'c. 1500-1450 av. J.-C.',
+    title: 'Construction et commerce sous Hatchepsout',
+    description:
+        'Expéditions commerciales (Pount) et programmes monumentaux majeurs.',
+  ),
+  TimelineEvent(
+    date: 'c. 1479-1425 av. J.-C.',
+    title: 'Apogée sous Hatchepsout et Thoutmôsis III',
+    description: 'Grandes constructions, commerce et campagnes militaires.',
+  ),
+  TimelineEvent(
+    date: 'c. 1450-1400 av. J.-C.',
+    title: 'Empire égyptien au Levant',
+    description:
+        'Le Nouvel Empire contrôle de vastes territoires et routes stratégiques.',
+  ),
+  TimelineEvent(
+    date: 'c. 1400-1350 av. J.-C.',
+    title: 'Âge diplomatique international',
+    description:
+        'Les échanges de lettres et cadeaux royaux relient l’Égypte aux grandes puissances du Proche-Orient.',
+  ),
+  TimelineEvent(
+    date: 'c. 1353-1336 av. J.-C.',
+    title: 'Réforme d’Akhenaton',
+    description: 'Culte d’Aton et fondation d’Akhetaton.',
+  ),
+  TimelineEvent(
     date: 'c. 1330 av. J.-C.',
+    title: 'Retour aux cultes traditionnels',
+    description:
+        'Après Amarna, les sanctuaires traditionnels retrouvent leur place centrale.',
+  ),
+  TimelineEvent(
+    date: 'c. 1332-1323 av. J.-C.',
     title: 'Règne de Toutânkhamon',
-    description: 'Rétablissement des cultes traditionnels après Akhenaton.',
+    description: 'Rétablissement des cultes traditionnels.',
+  ),
+  TimelineEvent(
+    date: 'c. 1323-1292 av. J.-C.',
+    title: 'Transition post-amarnienne',
+    description:
+        'Les règnes d’Ay et Horemheb stabilisent le royaume avant la XIXe dynastie.',
+  ),
+  TimelineEvent(
+    date: 'c. 1295-1279 av. J.-C.',
+    title: 'Séthi Ier et renforcement du royaume',
+    description:
+        'Reprise de l’influence militaire et grands chantiers religieux.',
+  ),
+  TimelineEvent(
+    date: 'c. 1279-1213 av. J.-C.',
+    title: 'Règne de Ramsès II',
+    description:
+        'Période monumentale, diplomatie internationale et grands temples.',
+  ),
+  TimelineEvent(
+    date: 'c. 1244 av. J.-C.',
+    title: 'Abou Simbel achevé',
+    description:
+        'Les temples rupestres deviennent l’un des grands symboles du programme ramesside.',
+  ),
+  TimelineEvent(
+    date: 'c. 1258 av. J.-C.',
+    title: 'Traité de paix égypto-hittite',
+    description:
+        'L’un des plus anciens traités de paix connus est conclu après Qadesh.',
+  ),
+  TimelineEvent(
+    date: 'c. 1186-1155 av. J.-C.',
+    title: 'Ramsès III et dernières grandes défenses',
+    description: 'Résistance aux menaces extérieures, puis déclin progressif.',
+  ),
+  TimelineEvent(
+    date: 'c. 1150 av. J.-C.',
+    title: 'Crises économiques et sociales',
+    description:
+        'Hausse des tensions internes, difficultés d’approvisionnement et affaiblissement du pouvoir central.',
+  ),
+  TimelineEvent(
+    date: 'c. 1177 av. J.-C.',
+    title: 'Crises de la fin de l’âge du Bronze',
+    description:
+        'Conflits et ruptures des réseaux méditerranéens touchent la région.',
+  ),
+  TimelineEvent(
+    date: 'c. 1069 av. J.-C.',
+    title: 'Fin du Nouvel Empire',
+    description: 'Entrée dans la Troisième Période intermédiaire.',
+  ),
+  TimelineEvent(
+    date: 'c. 1069-945 av. J.-C.',
+    title: 'Pouvoirs de Tanis et de Thèbes',
+    description:
+        'Partage de l’autorité entre dynasties du nord et clergé d’Amon au sud.',
+  ),
+  TimelineEvent(
+    date: 'c. 1000 av. J.-C.',
+    title: 'Réseaux religieux régionaux',
+    description:
+        'Les sanctuaires locaux jouent un rôle croissant dans la vie politique et économique.',
+  ),
+  TimelineEvent(
+    date: 'c. 945-715 av. J.-C.',
+    title: 'Dynasties d’origine libyenne',
+    description:
+        'Nouvelles familles royales gouvernent l’Égypte depuis le Delta.',
+  ),
+  TimelineEvent(
+    date: 'c. 747-664 av. J.-C.',
+    title: 'Dynasties libyennes et kouchites',
+    description:
+        'Pluralité de pouvoirs et influences africaines et proche-orientales.',
+  ),
+  TimelineEvent(
+    date: 'c. 730-700 av. J.-C.',
+    title: 'Unification kouchite',
+    description:
+        'Les rois napatéens réunissent une grande partie de la vallée du Nil sous leur autorité.',
+  ),
+  TimelineEvent(
+    date: '671-663 av. J.-C.',
+    title: 'Interventions assyriennes',
+    description: 'L’Assyrie mène plusieurs campagnes en Égypte.',
+  ),
+  TimelineEvent(
+    date: 'c. 664 av. J.-C.',
+    title: 'Renaissance saïte',
+    description:
+        'Psammétique Ier restaure l’unité et relance la culture classique.',
+  ),
+  TimelineEvent(
+    date: 'c. 610-595 av. J.-C.',
+    title: 'Règne de Néchao II',
+    description: 'Politique maritime et campagnes vers le Levant.',
+  ),
+  TimelineEvent(
+    date: 'c. 570-526 av. J.-C.',
+    title: 'Prosperité sous Amasis II',
+    description:
+        'Dynamisme économique et ouverture méditerranéenne avant la conquête perse.',
+  ),
+  TimelineEvent(
+    date: 'c. 560-530 av. J.-C.',
+    title: 'Naucratis et commerce grec',
+    description:
+        'Le port de Naucratis devient un point majeur d’échanges entre l’Égypte et le monde grec.',
+  ),
+  TimelineEvent(
+    date: '525 av. J.-C.',
+    title: 'Conquête perse',
+    description: 'L’Égypte passe sous domination achéménide.',
+  ),
+  TimelineEvent(
+    date: 'c. 486-404 av. J.-C.',
+    title: 'Révoltes contre la Perse',
+    description:
+        'Plusieurs soulèvements égyptiens contestent la domination achéménide.',
+  ),
+  TimelineEvent(
+    date: '404-343 av. J.-C.',
+    title: 'Dernières indépendances égyptiennes',
+    description: 'Brèves restaurations autochtones avant le retour perse.',
+  ),
+  TimelineEvent(
+    date: '343 av. J.-C.',
+    title: 'Seconde domination perse',
+    description: 'Retour des Perses jusqu’à l’arrivée d’Alexandre.',
+  ),
+  TimelineEvent(
+    date: '332-323 av. J.-C.',
+    title: 'Règne d’Alexandre en Égypte',
+    description:
+        'Alexandre est reconnu comme pharaon et réorganise le pays dans le cadre hellénistique.',
   ),
   TimelineEvent(
     date: '332 av. J.-C.',
@@ -50,9 +394,79 @@ const timelineData = [
     description: 'Début de la période hellénistique en Égypte.',
   ),
   TimelineEvent(
+    date: '331 av. J.-C.',
+    title: 'Fondation d’Alexandrie',
+    description:
+        'La nouvelle cité devient un centre politique, commercial et culturel majeur.',
+  ),
+  TimelineEvent(
+    date: '305 av. J.-C.',
+    title: 'Début de la dynastie ptolémaïque',
+    description: 'Les Lagides règnent depuis Alexandrie.',
+  ),
+  TimelineEvent(
+    date: 'c. 280 av. J.-C.',
+    title: 'Phare d’Alexandrie',
+    description:
+        'Le phare devient un repère maritime majeur et un symbole du prestige lagide.',
+  ),
+  TimelineEvent(
+    date: 'IIIe-IIe s. av. J.-C.',
+    title: 'Alexandrie, capitale du savoir',
+    description:
+        'La ville rayonne avec ses bibliothèques, savants et échanges méditerranéens.',
+  ),
+  TimelineEvent(
+    date: '196 av. J.-C.',
+    title: 'Décret de Memphis (Pierre de Rosette)',
+    description:
+        'Texte trilingue majeur pour la future compréhension des hiéroglyphes.',
+  ),
+  TimelineEvent(
+    date: '168 av. J.-C.',
+    title: 'Pressions romaines croissantes',
+    description:
+        'Rome influence de plus en plus les affaires politiques de la Méditerranée orientale.',
+  ),
+  TimelineEvent(
+    date: '51-30 av. J.-C.',
+    title: 'Règne de Cléopâtre VII',
+    description:
+        'Dernière grande reine lagide, entre diplomatie locale et enjeux romains.',
+  ),
+  TimelineEvent(
+    date: '31 av. J.-C.',
+    title: 'Bataille d’Actium',
+    description: 'Défaite de Cléopâtre VII et Marc Antoine face à Octave.',
+  ),
+  TimelineEvent(
     date: '30 av. J.-C.',
     title: 'Fin de l’Égypte pharaonique',
     description: 'Après Cléopâtre VII, l’Égypte devient province romaine.',
+  ),
+  TimelineEvent(
+    date: 'Ier-IIIe s. apr. J.-C.',
+    title: 'Égypte romaine',
+    description:
+        'Le pays reste stratégique pour l’approvisionnement en blé de l’Empire romain.',
+  ),
+  TimelineEvent(
+    date: '391 apr. J.-C.',
+    title: 'Fin progressive des cultes antiques officiels',
+    description:
+        'Les transformations religieuses de l’Empire romain modifient profondément les temples égyptiens.',
+  ),
+  TimelineEvent(
+    date: '1799 apr. J.-C.',
+    title: 'Redécouverte de la Pierre de Rosette',
+    description:
+        'Découverte majeure qui ouvre la voie au déchiffrement des hiéroglyphes.',
+  ),
+  TimelineEvent(
+    date: '1822 apr. J.-C.',
+    title: 'Champollion déchiffre les hiéroglyphes',
+    description:
+        'Naissance de l’égyptologie moderne grâce à la lecture du système hiéroglyphique.',
   ),
 ];
 

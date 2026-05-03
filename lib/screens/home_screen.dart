@@ -17,6 +17,7 @@ import 'pharaohs_screen.dart';
 import 'quiz_screen.dart';
 import 'symbols_screen.dart';
 import 'timeline_screen.dart';
+import 'writing_systems_screen.dart';
 import 'zen_explore_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -150,6 +151,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return const SymbolsScreen();
       case 'timeline':
         return const TimelineScreen();
+      case 'writings':
+        return const WritingSystemsScreen();
       case 'guided':
         return GuidedTourScreen(
           favorites: favorites,
@@ -212,6 +215,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.timeline_rounded,
         Colors.indigo.shade700,
         const TimelineScreen(),
+      ),
+      (
+        'writings',
+        'Écritures',
+        Icons.translate_rounded,
+        Colors.blue.shade700,
+        const WritingSystemsScreen(),
       ),
       (
         'guided',
