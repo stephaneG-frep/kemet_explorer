@@ -76,7 +76,10 @@ class _MythologyScreenState extends State<MythologyScreen> {
                     title: god.name,
                     subtitle: god.role,
                     icon: isFav ? Icons.favorite : Icons.auto_awesome_rounded,
-                    imagePath: god.imagePath,
+                    imagePath: god.useCartouche ? null : god.imagePath,
+                    leading: god.useCartouche
+                        ? _GodCartouche(label: god.name.toUpperCase())
+                        : null,
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => DetailScreen(
@@ -108,5 +111,68 @@ class _MythologyScreenState extends State<MythologyScreen> {
         ),
       ),
     );
+  }
+}
+
+class _GodCartouche extends StatelessWidget {
+  const _GodCartouche({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = Theme.of(context).colorScheme.primary;
+    return CustomPaint(
+      painter: _CartouchePainter(color: color),
+      child: SizedBox(
+        width: 88,
+        height: 88,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: color,
+                fontWeight: FontWeight.w700,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CartouchePainter extends CustomPainter {
+  const _CartouchePainter({required this.color});
+
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final stroke = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2;
+    final rect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(4, 4, size.width - 14, size.height - 8),
+      Radius.circular(size.height / 2),
+    );
+    canvas.drawRRect(rect, stroke);
+    canvas.drawLine(
+      Offset(size.width - 7, 10),
+      Offset(size.width - 7, size.height - 10),
+      stroke,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant _CartouchePainter oldDelegate) {
+    return oldDelegate.color != color;
   }
 }

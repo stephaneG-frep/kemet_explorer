@@ -6,6 +6,7 @@ class EgyptianGod {
     required this.symbol,
     required this.description,
     required this.imagePath,
+    this.useCartouche = false,
     this.imageSourceUrl,
   });
 
@@ -15,5 +16,6 @@ class EgyptianGod {
   final String symbol;
   final String description;
   final String imagePath;
+  final bool useCartouche;
   final String? imageSourceUrl;
 }

@@ -7,6 +7,7 @@ class InfoCard extends StatelessWidget {
     required this.subtitle,
     this.icon,
     this.imagePath,
+    this.leading,
     this.onTap,
   });
 
@@ -14,6 +15,7 @@ class InfoCard extends StatelessWidget {
   final String subtitle;
   final IconData? icon;
   final String? imagePath;
+  final Widget? leading;
   final VoidCallback? onTap;
 
   @override
@@ -26,7 +28,9 @@ class InfoCard extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Row(
             children: [
-              if (imagePath != null)
+              if (leading != null)
+                leading!
+              else if (imagePath != null)
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Container(
