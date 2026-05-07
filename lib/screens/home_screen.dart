@@ -17,6 +17,7 @@ import 'mythology_screen.dart';
 import 'myth_stories_screen.dart';
 import 'pharaohs_screen.dart';
 import 'quiz_screen.dart';
+import 'royal_list_screen.dart';
 import 'symbols_screen.dart';
 import 'timeline_screen.dart';
 import 'writing_systems_screen.dart';
@@ -147,6 +148,8 @@ class _HomeScreenState extends State<HomeScreen> {
           favorites: favorites,
           onToggleFavorite: toggleFavorite,
         );
+      case 'royal_list':
+        return const RoyalListScreen();
       case 'monuments':
         return const MonumentsScreen();
       case 'symbols':
@@ -200,6 +203,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.account_balance_rounded,
         Colors.orange.shade700,
         PharaohsScreen(favorites: favorites, onToggleFavorite: toggleFavorite),
+      ),
+      (
+        'royal_list',
+        'Liste royale',
+        Icons.format_list_numbered_rounded,
+        Colors.deepOrange.shade400,
+        const RoyalListScreen(),
       ),
       (
         'monuments',

@@ -38,7 +38,7 @@ const monumentsData = [
     category: 'Nécropole',
     importance:
         'Site majeur avec la pyramide à degrés de Djéser, étape clé de l’évolution de l’architecture pyramidale.',
-    imagePath: 'assets/images/saqqarah_v2.jpg',
+    imagePath: 'assets/images/saqqarah_necropole_custom.png',
     altImagePath: 'assets/images/saqqarah_v2.webp',
     highlights: [
       'Immense nécropole liée à Memphis.',
@@ -263,9 +263,8 @@ const monumentsData = [
     category: 'Site urbain',
     importance:
         'Ville fondée par Akhenaton pour le culte d’Aton, capitale d’une réforme religieuse majeure.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/amarna_custom.png',
     highlights: [
-      'Photo à venir.',
       'Urbanisme conçu pour un projet idéologique.',
       'Témoignage direct de la période amarnienne.',
     ],
@@ -278,9 +277,8 @@ const monumentsData = [
     category: 'Pyramides',
     importance:
         'Site clé de l’évolution pyramidale, avec des monuments associés à Snéfrou.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/dahchour_custom.png',
     highlights: [
-      'Photo à venir.',
       'Pyramide rhomboïdale et pyramide rouge.',
       'Étape technique avant Gizeh.',
     ],

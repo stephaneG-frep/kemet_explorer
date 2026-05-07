@@ -2,6 +2,32 @@ import '../models/pharaoh.dart';
 
 const pharaohsData = [
   Pharaoh(
+    id: 'narmer',
+    name: 'Narmer',
+    era: 'Période thinite',
+    role: 'Souverain de l’unification',
+    facts: [
+      'Souvent associé à l’unification de la Haute et de la Basse Égypte.',
+      'Figure fondatrice des premières dynasties.',
+      'Connu notamment par la palette de Narmer.',
+    ],
+    imagePath: 'assets/images/narmer_custom.png',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Narmer',
+  ),
+  Pharaoh(
+    id: 'snefrou',
+    name: 'Snéfrou',
+    era: 'Ancien Empire',
+    role: 'Grand bâtisseur de la IVe dynastie',
+    facts: [
+      'Père de Khéops.',
+      'Associe son règne à Meïdoum et Dahchour.',
+      'Règne clé dans l’évolution des techniques pyramidales.',
+    ],
+    imagePath: 'assets/images/snefrou_custom.png',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Sneferu',
+  ),
+  Pharaoh(
     id: 'kheops',
     name: 'Khéops',
     era: 'Ancien Empire',
@@ -50,7 +76,7 @@ const pharaohsData = [
       'Développe commerce et architecture monumentale.',
       'Le temple de Deir el-Bahari reste un symbole de son règne.',
     ],
-    imagePath: 'assets/images/hatchepsout.webp',
+    imagePath: 'assets/images/hatchepsout_custom.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Hatshepsut',
   ),
   Pharaoh(
@@ -76,8 +102,21 @@ const pharaohsData = [
       'Fonde la ville d’Akhetaton.',
       'Sa réforme marque une rupture majeure dans l’histoire religieuse égyptienne.',
     ],
-    imagePath: 'assets/images/akhenaton.webp',
+    imagePath: 'assets/images/akhenaton_custom.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Akhenaten',
+  ),
+  Pharaoh(
+    id: 'pepi1',
+    name: 'Pépi Ier',
+    era: 'Ancien Empire',
+    role: 'Pharaon de la VIe dynastie',
+    facts: [
+      'Règne long durant l’Ancien Empire.',
+      'Développe les échanges et les expéditions vers le sud.',
+      'Période importante pour l’administration provinciale.',
+    ],
+    imagePath: 'assets/images/pepi1_custom.png',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Pepi_I_Meryre',
   ),
   Pharaoh(
     id: 'toutankhamon',
