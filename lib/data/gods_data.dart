@@ -108,8 +108,8 @@ const godsData = [
     symbol: 'Bâton composite',
     description:
         'Ptah est une grande divinité de Memphis. Il est associé à la création par la pensée et la parole, ainsi qu’aux artisans et aux bâtisseurs.',
-    imagePath: 'assets/images/god_ptah.jpg',
-    useCartouche: true,
+    imagePath: 'assets/images/ptah.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptah',
   ),
   EgyptianGod(
@@ -119,8 +119,8 @@ const godsData = [
     symbol: 'Lionne et disque solaire',
     description:
         'Sekhmet incarne une force redoutable, protectrice du roi et destructrice des ennemis. Elle est aussi invoquée pour la médecine et la guérison.',
-    imagePath: 'assets/images/god_sekhmet.jpg',
-    useCartouche: true,
+    imagePath: 'assets/images/sekhmet.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Sekhmet',
   ),
   EgyptianGod(
@@ -130,8 +130,8 @@ const godsData = [
     symbol: 'Bélier et tour de potier',
     description:
         'Khnoum est lié aux sources du Nil et à la création de l’être humain, qu’il façonne symboliquement sur son tour de potier.',
-    imagePath: 'assets/images/god_khnum.png',
-    useCartouche: true,
+    imagePath: 'assets/images/khnoum.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Khnum',
   ),
   EgyptianGod(
@@ -141,8 +141,8 @@ const godsData = [
     symbol: 'Crocodile',
     description:
         'Sobek unit puissance militaire, fertilité et force des eaux. Son culte est particulièrement important dans les régions du Fayoum.',
-    imagePath: 'assets/images/god_sobek.png',
-    useCartouche: true,
+    imagePath: 'assets/images/sobek.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Sobek',
   ),
   EgyptianGod(
@@ -152,8 +152,8 @@ const godsData = [
     symbol: 'Hiéroglyphe du palais et du panier',
     description:
         'Nephthys accompagne Isis dans les récits funéraires. Elle protège les morts et veille sur les rituels de passage vers l’au-delà.',
-    imagePath: 'assets/images/god_nephthys.png',
-    useCartouche: true,
+    imagePath: 'assets/images/nephthys.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Nephthys',
   ),
   EgyptianGod(
@@ -163,8 +163,8 @@ const godsData = [
     symbol: 'Voûte céleste étoilée',
     description:
         'Nout est figurée comme l’arche du ciel qui enveloppe le monde. Elle avale le soleil au couchant et le met au monde à l’aube.',
-    imagePath: 'assets/images/god_nut.png',
-    useCartouche: true,
+    imagePath: 'assets/images/nout.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Nut_(goddess)',
   ),
   EgyptianGod(
@@ -174,8 +174,8 @@ const godsData = [
     symbol: 'Oie',
     description:
         'Geb représente la terre fertile. Avec Nout, il forme un couple cosmique fondamental dans la compréhension égyptienne de l’univers.',
-    imagePath: 'assets/images/god_geb.png',
-    useCartouche: true,
+    imagePath: 'assets/images/geb.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Geb',
   ),
   EgyptianGod(
@@ -185,8 +185,8 @@ const godsData = [
     symbol: 'Double plume',
     description:
         'Amon devient une divinité centrale du Nouvel Empire. Souvent uni à Râ, il incarne une puissance créatrice et royale.',
-    imagePath: 'assets/images/god_amun.png',
-    useCartouche: true,
+    imagePath: 'assets/images/amon.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Amun',
   ),
   EgyptianGod(
@@ -196,8 +196,8 @@ const godsData = [
     symbol: 'Disque lunaire',
     description:
         'Khonsou est associé à la lune, au temps et à la guérison. Il fait partie de la triade thébaine avec Amon et Mout.',
-    imagePath: 'assets/images/god_khonsou.png',
-    useCartouche: true,
+    imagePath: 'assets/images/khonsou.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Khonsu',
   ),
   EgyptianGod(
@@ -207,8 +207,8 @@ const godsData = [
     symbol: 'Couronne double',
     description:
         'Mout est une déesse maternelle et royale. Son culte souligne la protection du royaume et la dimension familiale du panthéon.',
-    imagePath: 'assets/images/god_mout.png',
-    useCartouche: true,
+    imagePath: 'assets/images/mout.png',
+    useCartouche: false,
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Mut',
   ),
 ];
