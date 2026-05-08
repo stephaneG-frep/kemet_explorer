@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../data/gods_data.dart';
@@ -11,6 +12,7 @@ import '../widgets/home_category_card.dart';
 import '../widgets/relax_background.dart';
 import 'guided_tour_screen.dart';
 import 'history_screen.dart';
+import 'launch_video_screen.dart';
 import 'monuments_screen.dart';
 import 'cartouches_screen.dart';
 import 'mythology_screen.dart';
@@ -102,6 +104,26 @@ class _HomeScreenState extends State<HomeScreen> {
     await storage.saveAmbienceEnabled(ambienceOn);
     if (!mounted) return;
     setState(() {});
+  }
+
+  bool get _canPlayIntroVideo {
+    if (kIsWeb) return false;
+    return defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS;
+  }
+
+  Future<void> _replayIntroVideo() async {
+    if (!_canPlayIntroVideo) return;
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => LaunchVideoScreen(
+          onFinished: () {
+            if (!Navigator.of(context).canPop()) return;
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
+    );
   }
 
   Route<T> _buildRoute<T>(Widget page) {
@@ -276,6 +298,12 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Kemet Explorer'),
         actions: [
+          if (_canPlayIntroVideo)
+            IconButton(
+              icon: const Icon(Icons.play_circle_fill_rounded),
+              tooltip: 'Rejouer la vidéo',
+              onPressed: _replayIntroVideo,
+            ),
           IconButton(
             icon: Icon(
               ambienceOn ? Icons.music_note_rounded : Icons.music_off_rounded,

@@ -24,7 +24,7 @@ class AmbienceService {
     } else {
       await _player.stop();
       await _player.setVolume(0.18);
-      await _player.play(AssetSource('sounds/ambience.wav'));
+      await _player.play(AssetSource('sounds/musique_kemet.mp3'));
       _isPlaying = true;
     }
   }
