@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/gods_data.dart';
+import '../data/global_gallery_data.dart';
 import '../widgets/info_card.dart';
 import 'detail_screen.dart';
 
@@ -76,7 +77,6 @@ class _MythologyScreenState extends State<MythologyScreen> {
                     title: god.name,
                     subtitle: god.role,
                     icon: isFav ? Icons.favorite : Icons.auto_awesome_rounded,
-                    imagePath: god.useCartouche ? null : god.imagePath,
                     leading: god.useCartouche
                         ? _GodCartouche(label: god.name.toUpperCase())
                         : null,
@@ -94,6 +94,11 @@ class _MythologyScreenState extends State<MythologyScreen> {
                           galleryTitles: godsData.map((e) => e.name).toList(),
                           galleryIndex: godsData.indexWhere(
                             (e) => e.id == god.id,
+                          ),
+                          globalGalleryImages: GlobalGalleryData.buildImages(),
+                          globalGalleryTitles: GlobalGalleryData.buildTitles(),
+                          globalGalleryIndex: GlobalGalleryData.indexForGodId(
+                            god.id,
                           ),
                           isFavorite: isFav,
                           onFavoriteToggle: () async {

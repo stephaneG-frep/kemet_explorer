@@ -9,16 +9,34 @@ const historyData = [
         'Formation progressive des royaumes de Haute et Basse Égypte avant l’unification.',
   ),
   HistoricalPeriod(
+    name: 'Période thinite (dynasties I-II)',
+    dateRange: 'c. 3100-2686 av. J.-C.',
+    description:
+        'Mise en place de l’État pharaonique unifié, des institutions royales et des premières grandes nécropoles.',
+  ),
+  HistoricalPeriod(
     name: 'Ancien Empire',
     dateRange: 'c. 2686-2181 av. J.-C.',
     description:
         'Période des grandes pyramides, d’une administration centralisée et d’une forte mise en scène du pouvoir pharaonique.',
   ),
   HistoricalPeriod(
+    name: 'Première Période intermédiaire',
+    dateRange: 'c. 2181-2055 av. J.-C.',
+    description:
+        'Affaiblissement du pouvoir central et montée de pouvoirs régionaux avant la réunification thébaine.',
+  ),
+  HistoricalPeriod(
     name: 'Moyen Empire',
     dateRange: 'c. 2055-1650 av. J.-C.',
     description:
         'Temps de réunification et de renouveau culturel. Les textes littéraires et les politiques d’aménagement se développent.',
+  ),
+  HistoricalPeriod(
+    name: 'Deuxième Période intermédiaire',
+    dateRange: 'c. 1650-1550 av. J.-C.',
+    description:
+        'Période marquée par les Hyksôs dans le Delta et par la montée des rois thébains au sud.',
   ),
   HistoricalPeriod(
     name: 'Nouvel Empire',
@@ -39,16 +57,40 @@ const historyData = [
         'Période d’adaptations politiques et d’influences extérieures, tout en conservant des traditions religieuses profondes.',
   ),
   HistoricalPeriod(
+    name: 'Première domination perse',
+    dateRange: '525-404 av. J.-C.',
+    description:
+        'L’Égypte est intégrée à l’empire achéménide, tout en gardant des traditions locales fortes.',
+  ),
+  HistoricalPeriod(
+    name: 'Dynasties indépendantes tardives',
+    dateRange: '404-343 av. J.-C.',
+    description:
+        'Retour de souverains égyptiens indigènes (XXVIIIe à XXXe dynasties), avec un dernier renouveau politique.',
+  ),
+  HistoricalPeriod(
+    name: 'Seconde domination perse',
+    dateRange: '343-332 av. J.-C.',
+    description:
+        'Brève reconquête perse juste avant l’arrivée d’Alexandre le Grand.',
+  ),
+  HistoricalPeriod(
+    name: 'Période macédonienne',
+    dateRange: '332-305 av. J.-C.',
+    description:
+        'Après la conquête d’Alexandre, l’Égypte passe sous contrôle macédonien avant la dynastie lagide.',
+  ),
+  HistoricalPeriod(
     name: 'Période ptolémaïque',
-    dateRange: '332-30 av. J.-C.',
+    dateRange: '305-30 av. J.-C.',
     description:
         'Dynastie lagide installée après Alexandre, avec Alexandrie comme grand centre culturel.',
   ),
   HistoricalPeriod(
-    name: 'Période romaine',
-    dateRange: 'à partir de 30 av. J.-C.',
+    name: 'Période romaine et byzantine',
+    dateRange: '30 av. J.-C. - 641 apr. J.-C.',
     description:
-        'L’Égypte devient province romaine après la mort de Cléopâtre VII.',
+        'L’Égypte devient province romaine après Cléopâtre VII, puis province byzantine jusqu’à la conquête arabe.',
   ),
 ];
 

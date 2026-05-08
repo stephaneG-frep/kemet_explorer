@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/history_data.dart';
-import '../widgets/info_card.dart';
+import '../widgets/timeline_item.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
@@ -29,6 +29,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Frise des grandes périodes de l’Égypte antique',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            const SizedBox(height: 10),
             TextField(
               decoration: const InputDecoration(
                 hintText: 'Rechercher une période...',
@@ -42,10 +50,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 itemCount: filtered.length,
                 itemBuilder: (context, index) {
                   final item = filtered[index];
-                  return InfoCard(
+                  return TimelineItem(
+                    date: item.dateRange,
                     title: item.name,
-                    subtitle: '${item.dateRange}\n${item.description}',
-                    icon: Icons.history_toggle_off_rounded,
+                    description: item.description,
+                    isLast: index == filtered.length - 1,
                   );
                 },
               ),

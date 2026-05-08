@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../data/gods_data.dart';
+import '../data/global_gallery_data.dart';
 import '../data/monuments_data.dart';
 import '../data/pharaohs_data.dart';
 import '../data/quiz_data.dart';
@@ -11,6 +12,7 @@ import '../services/pdf_export_service.dart';
 import '../widgets/home_category_card.dart';
 import '../widgets/relax_background.dart';
 import 'guided_tour_screen.dart';
+import 'gallery_screen.dart';
 import 'history_screen.dart';
 import 'launch_video_screen.dart';
 import 'monuments_screen.dart';
@@ -174,6 +176,10 @@ class _HomeScreenState extends State<HomeScreen> {
         return const RoyalListScreen();
       case 'monuments':
         return const MonumentsScreen();
+      case 'gallery':
+        final images = GlobalGalleryData.buildImages();
+        final titles = GlobalGalleryData.buildTitles();
+        return GalleryScreen(images: images, titles: titles);
       case 'symbols':
         return const SymbolsScreen();
       case 'timeline':
@@ -239,6 +245,16 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.temple_hindu_rounded,
         Colors.teal.shade600,
         const MonumentsScreen(),
+      ),
+      (
+        'gallery',
+        'Galerie photos',
+        Icons.photo_library_rounded,
+        Colors.blueGrey.shade600,
+        GalleryScreen(
+          images: GlobalGalleryData.buildImages(),
+          titles: GlobalGalleryData.buildTitles(),
+        ),
       ),
       (
         'symbols',

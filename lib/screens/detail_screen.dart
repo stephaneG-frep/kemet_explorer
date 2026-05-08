@@ -18,6 +18,9 @@ class DetailScreen extends StatelessWidget {
     this.galleryImages = const [],
     this.galleryTitles = const [],
     this.galleryIndex = 0,
+    this.globalGalleryImages = const [],
+    this.globalGalleryTitles = const [],
+    this.globalGalleryIndex = 0,
     this.isFavorite = false,
     this.onFavoriteToggle,
   });
@@ -31,6 +34,9 @@ class DetailScreen extends StatelessWidget {
   final List<String> galleryImages;
   final List<String> galleryTitles;
   final int galleryIndex;
+  final List<String> globalGalleryImages;
+  final List<String> globalGalleryTitles;
+  final int globalGalleryIndex;
   final bool isFavorite;
   final VoidCallback? onFavoriteToggle;
 
@@ -58,6 +64,7 @@ class DetailScreen extends StatelessWidget {
                 ),
               ),
               icon: const Icon(Icons.photo_library_outlined),
+              tooltip: 'Galerie de la section',
             ),
           if (imageSourceUrl != null)
             IconButton(
@@ -91,6 +98,24 @@ class DetailScreen extends StatelessWidget {
               ),
             ),
           const SizedBox(height: 14),
+          if (globalGalleryImages.isNotEmpty)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: OutlinedButton.icon(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => GalleryScreen(
+                      images: globalGalleryImages,
+                      titles: globalGalleryTitles,
+                      initialIndex: globalGalleryIndex,
+                    ),
+                  ),
+                ),
+                icon: const Icon(Icons.collections_rounded),
+                label: const Text('Ouvrir dans la galerie globale'),
+              ),
+            ),
+          if (globalGalleryImages.isNotEmpty) const SizedBox(height: 10),
           _LearningCard(
             title: 'Essentiel',
             text: description,

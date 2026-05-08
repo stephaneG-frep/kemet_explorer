@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/global_gallery_data.dart';
 import '../data/monuments_data.dart';
 import '../widgets/info_card.dart';
 import 'detail_screen.dart';
@@ -112,7 +113,6 @@ class _MonumentsScreenState extends State<MonumentsScreen> {
                     subtitle:
                         '${m.location} • ${m.category}${photoPending ? ' • Photo à venir' : ''}\n${m.importance}',
                     icon: Icons.temple_buddhist_rounded,
-                    imagePath: m.imagePath,
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => DetailScreen(
@@ -133,6 +133,10 @@ class _MonumentsScreenState extends State<MonumentsScreen> {
                             if (m.altImagePath != null) '${m.name} • vue 2',
                           ],
                           galleryIndex: 0,
+                          globalGalleryImages: GlobalGalleryData.buildImages(),
+                          globalGalleryTitles: GlobalGalleryData.buildTitles(),
+                          globalGalleryIndex:
+                              GlobalGalleryData.indexForMonumentId(m.id),
                         ),
                       ),
                     ),

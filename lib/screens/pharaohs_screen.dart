@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/global_gallery_data.dart';
 import '../data/pharaohs_data.dart';
 import '../widgets/info_card.dart';
 import 'detail_screen.dart';
@@ -117,7 +118,6 @@ class _PharaohsScreenState extends State<PharaohsScreen> {
                     icon: isFav
                         ? Icons.favorite
                         : Icons.workspace_premium_rounded,
-                    imagePath: p.imagePath,
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => DetailScreen(
@@ -136,6 +136,10 @@ class _PharaohsScreenState extends State<PharaohsScreen> {
                           galleryIndex: pharaohsData.indexWhere(
                             (e) => e.id == p.id,
                           ),
+                          globalGalleryImages: GlobalGalleryData.buildImages(),
+                          globalGalleryTitles: GlobalGalleryData.buildTitles(),
+                          globalGalleryIndex:
+                              GlobalGalleryData.indexForPharaohId(p.id),
                           extraLines: p.facts,
                           isFavorite: isFav,
                           onFavoriteToggle: () async {
