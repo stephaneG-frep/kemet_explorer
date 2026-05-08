@@ -483,6 +483,24 @@ const pharaohTimelineData = [
     description: 'Premier souverain de la Ire dynastie après l’unification.',
   ),
   TimelineEvent(
+    date: 'c. 3000-2950 av. J.-C.',
+    title: 'Djer',
+    description:
+        'Roi des premières dynasties, consolidation de l’État thinite.',
+  ),
+  TimelineEvent(
+    date: 'c. 2950-2900 av. J.-C.',
+    title: 'Djet',
+    description:
+        'Souverain de la Ire dynastie, continuité des institutions royales.',
+  ),
+  TimelineEvent(
+    date: 'c. 2900-2850 av. J.-C.',
+    title: 'Den',
+    description:
+        'Roi marquant des débuts dynastiques, affirmation du pouvoir pharaonique.',
+  ),
+  TimelineEvent(
     date: 'c. 2686-2613 av. J.-C.',
     title: 'Snéfrou',
     description:
@@ -522,6 +540,12 @@ const pharaohTimelineData = [
     description: 'Très long règne à la fin de l’Ancien Empire.',
   ),
   TimelineEvent(
+    date: 'c. 2332-2283 av. J.-C.',
+    title: 'Pépi Ier',
+    description:
+        'Règne important de la VIe dynastie, expansion des échanges au sud.',
+  ),
+  TimelineEvent(
     date: 'c. 2055-2004 av. J.-C.',
     title: 'Montouhotep II',
     description: 'Réunifie le pays et ouvre le Moyen Empire.',
@@ -544,6 +568,12 @@ const pharaohTimelineData = [
         'Règne de prospérité et de grands travaux hydrauliques au Fayoum.',
   ),
   TimelineEvent(
+    date: 'c. 1806-1802 av. J.-C.',
+    title: 'Sobeknéferou (reine-pharaon)',
+    description:
+        'Dernière souveraine de la XIIe dynastie, figure féminine majeure du Moyen Empire.',
+  ),
+  TimelineEvent(
     date: 'c. 1650-1550 av. J.-C.',
     title: 'Période des Hyksôs',
     description:
@@ -554,6 +584,12 @@ const pharaohTimelineData = [
     title: 'Ahmôsis Ier',
     description:
         'Fondateur de la XVIIIe dynastie, ouvre la période du Nouvel Empire.',
+  ),
+  TimelineEvent(
+    date: 'c. 1549-1524 av. J.-C.',
+    title: 'Ahmès-Néfertary (Grande reine)',
+    description:
+        'Grande épouse royale et figure religieuse majeure des débuts du Nouvel Empire.',
   ),
   TimelineEvent(
     date: 'c. 1506-1493 av. J.-C.',
@@ -577,10 +613,22 @@ const pharaohTimelineData = [
     description: 'Règne prestigieux marqué par la diplomatie et les arts.',
   ),
   TimelineEvent(
+    date: 'c. 1390-1353 av. J.-C.',
+    title: 'Tiyi (Grande épouse royale)',
+    description:
+        'Reine influente du règne d’Amenhotep III, active dans la diplomatie et la cour.',
+  ),
+  TimelineEvent(
     date: 'c. 1353-1336 av. J.-C.',
     title: 'Akhenaton',
     description:
         'Réforme religieuse centrée sur Aton et fondation d’Akhetaton.',
+  ),
+  TimelineEvent(
+    date: 'c. 1350 av. J.-C.',
+    title: 'Néfertiti',
+    description:
+        'Reine emblématique de la période amarnienne, associée au culte d’Aton.',
   ),
   TimelineEvent(
     date: 'c. 1332-1323 av. J.-C.',
@@ -605,9 +653,21 @@ const pharaohTimelineData = [
         'Règne long et prestigieux, monuments majeurs comme Abou Simbel.',
   ),
   TimelineEvent(
+    date: 'c. 1279-1213 av. J.-C.',
+    title: 'Néfertari (Grande épouse royale)',
+    description:
+        'Épouse de Ramsès II, connue pour son tombeau remarquable dans la Vallée des Reines.',
+  ),
+  TimelineEvent(
     date: 'c. 1213-1203 av. J.-C.',
     title: 'Mérenptah',
     description: 'Successeur de Ramsès II, campagnes défensives importantes.',
+  ),
+  TimelineEvent(
+    date: 'c. 1203-1197 av. J.-C.',
+    title: 'Séthi II',
+    description:
+        'Roi de la fin de la XIXe dynastie dans une période de tensions politiques.',
   ),
   TimelineEvent(
     date: 'c. 1186-1155 av. J.-C.',
@@ -622,9 +682,21 @@ const pharaohTimelineData = [
         'Affaiblissement progressif du pouvoir central en fin de Nouvel Empire.',
   ),
   TimelineEvent(
+    date: 'c. 1191-1189 av. J.-C.',
+    title: 'Taousert (reine-pharaon)',
+    description:
+        'Souveraine de la fin de la XIXe dynastie, avant les recompositions du début de la XXe.',
+  ),
+  TimelineEvent(
     date: 'c. 747-716 av. J.-C.',
     title: 'Piye (dynastie kouchite)',
     description: 'Roi de Napata qui impose son autorité sur l’Égypte.',
+  ),
+  TimelineEvent(
+    date: 'c. 743-712 av. J.-C.',
+    title: 'Chépénoupet II (Divine adoratrice)',
+    description:
+        'Grande figure religieuse thébaine liée aux équilibres politiques de la XXVe dynastie.',
   ),
   TimelineEvent(
     date: 'c. 690-664 av. J.-C.',
@@ -649,6 +721,18 @@ const pharaohTimelineData = [
     description: 'Règne de prospérité avant la conquête perse.',
   ),
   TimelineEvent(
+    date: 'c. 380-362 av. J.-C.',
+    title: 'Nectanébo Ier',
+    description:
+        'Roi de la XXXe dynastie, restaurations monumentales et reprise politique égyptienne.',
+  ),
+  TimelineEvent(
+    date: 'c. 360-343 av. J.-C.',
+    title: 'Nectanébo II',
+    description:
+        'Dernier pharaon autochtone avant le retour de la domination perse.',
+  ),
+  TimelineEvent(
     date: '525 av. J.-C.',
     title: 'Conquête perse (Cambyse II)',
     description: 'Début de la domination achéménide sur l’Égypte.',
@@ -667,6 +751,18 @@ const pharaohTimelineData = [
     date: '305-30 av. J.-C.',
     title: 'Dynastie lagide (Ptolémées)',
     description: 'Dynastie d’origine macédonienne régnant depuis Alexandrie.',
+  ),
+  TimelineEvent(
+    date: '246-222 av. J.-C.',
+    title: 'Ptolémée III Évergète',
+    description:
+        'Roi lagide de l’apogée ptolémaïque, puissance diplomatique et militaire.',
+  ),
+  TimelineEvent(
+    date: '180-145 av. J.-C.',
+    title: 'Ptolémée VI Philométor',
+    description:
+        'Roi lagide marquant du IIe siècle av. J.-C. dans un contexte méditerranéen instable.',
   ),
   TimelineEvent(
     date: '51-30 av. J.-C.',

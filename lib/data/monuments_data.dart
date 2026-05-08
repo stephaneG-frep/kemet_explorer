@@ -187,7 +187,7 @@ const monumentsData = [
     category: 'Temple',
     importance:
         'Temple double unique dédié à Sobek et Horus l’Ancien, remarquable par son plan symétrique.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/temple_kom_ombo.png',
     highlights: [
       'Photo à venir.',
       'Double sanctuaire et double axe rituel.',
@@ -233,7 +233,7 @@ const monumentsData = [
     category: 'Temple',
     importance:
         'Sanctuaire majeur du culte d’Osiris et célèbre pour la liste royale d’Abydos.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/temple_abydos.png',
     highlights: [
       'Photo à venir.',
       'Liste d’Abydos essentielle pour l’histoire dynastique.',

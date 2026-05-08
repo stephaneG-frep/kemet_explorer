@@ -20,17 +20,48 @@ class PharaohsScreen extends StatefulWidget {
 
 class _PharaohsScreenState extends State<PharaohsScreen> {
   String query = '';
-  String selectedEra = 'Toutes';
+  String selectedDynasty = 'Toutes';
+
+  String _extractDynastyLabel(String era, String role) {
+    final lowerRole = role.toLowerCase();
+    final lowerEra = era.toLowerCase();
+    final dynMatch = RegExp(
+      r'((?:[ivxlcdm]+e|ire|xxve|xxviie|xxxe|xixe|xxe|xviiie|xviie|xvie|xve|xive|xiiie|xiie|xie|xe|ixe|viiie|viie|vie|ve|ive|iiie|iie)\s+dynastie)',
+      caseSensitive: false,
+    ).firstMatch(lowerRole);
+
+    if (dynMatch != null) {
+      final value = dynMatch.group(1)!;
+      return value[0].toUpperCase() + value.substring(1);
+    }
+    if (lowerEra.contains('ptol')) return 'Dynastie lagide';
+    if (lowerEra.contains('perse')) return 'Dynastie achéménide';
+    if (lowerEra.contains('thinite')) return 'Dynasties thinites';
+    if (lowerEra.contains('ancien empire')) return 'Ancien Empire (autres)';
+    if (lowerEra.contains('moyen empire')) return 'Moyen Empire (autres)';
+    if (lowerEra.contains('nouvel empire')) return 'Nouvel Empire (autres)';
+    if (lowerEra.contains('basse époque')) return 'Basse époque (autres)';
+    if (lowerEra.contains('intermédiaire')) {
+      return 'Périodes intermédiaires';
+    }
+    return 'Autres';
+  }
 
   @override
   Widget build(BuildContext context) {
-    final eras = <String>{'Toutes', ...pharaohsData.map((p) => p.era)}.toList();
+    final dynasties = <String>{
+      'Toutes',
+      ...pharaohsData.map((p) => _extractDynastyLabel(p.era, p.role)),
+    }.toList();
     final filtered = pharaohsData.where((p) {
       final matchesQuery =
           p.name.toLowerCase().contains(query.toLowerCase()) ||
-          p.era.toLowerCase().contains(query.toLowerCase());
-      final matchesEra = selectedEra == 'Toutes' || p.era == selectedEra;
-      return matchesQuery && matchesEra;
+          p.era.toLowerCase().contains(query.toLowerCase()) ||
+          p.role.toLowerCase().contains(query.toLowerCase());
+      final dynasty = _extractDynastyLabel(p.era, p.role);
+      final matchesDynasty =
+          selectedDynasty == 'Toutes' || dynasty == selectedDynasty;
+      return matchesQuery && matchesDynasty;
     }).toList();
 
     return Scaffold(
@@ -47,17 +78,26 @@ class _PharaohsScreenState extends State<PharaohsScreen> {
               onChanged: (value) => setState(() => query = value),
             ),
             const SizedBox(height: 8),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Filtrer par dynastie',
+                style: Theme.of(context).textTheme.titleSmall,
+              ),
+            ),
+            const SizedBox(height: 6),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: eras
+                children: dynasties
                     .map(
-                      (era) => Padding(
+                      (dynasty) => Padding(
                         padding: const EdgeInsets.only(right: 8),
                         child: ChoiceChip(
-                          label: Text(era),
-                          selected: selectedEra == era,
-                          onSelected: (_) => setState(() => selectedEra = era),
+                          label: Text(dynasty),
+                          selected: selectedDynasty == dynasty,
+                          onSelected: (_) =>
+                              setState(() => selectedDynasty = dynasty),
                         ),
                       ),
                     )

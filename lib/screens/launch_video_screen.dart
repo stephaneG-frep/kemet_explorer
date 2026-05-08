@@ -11,9 +11,14 @@ class LaunchVideoScreen extends StatefulWidget {
 }
 
 class _LaunchVideoScreenState extends State<LaunchVideoScreen> {
-  late final VideoPlayerController _controller;
+  static const _playlist = [
+    'assets/videos/narmer_video.mp4',
+    'assets/videos/cleopatre_video.mp4',
+  ];
+
+  VideoPlayerController? _controller;
+  int _index = 0;
   bool _completed = false;
-  bool _failed = false;
 
   void _finishOnce() {
     if (_completed) return;
@@ -21,56 +26,81 @@ class _LaunchVideoScreenState extends State<LaunchVideoScreen> {
     widget.onFinished();
   }
 
+  Future<void> _loadAndPlayCurrent() async {
+    if (_index >= _playlist.length) {
+      _finishOnce();
+      return;
+    }
+
+    final next = VideoPlayerController.asset(_playlist[_index]);
+    _controller = next;
+
+    try {
+      await next.initialize();
+      if (!mounted) return;
+      setState(() {});
+      await next.play();
+      next.addListener(_onVideoTick);
+    } catch (_) {
+      await next.dispose();
+      _index += 1;
+      if (!mounted) return;
+      await _loadAndPlayCurrent();
+    }
+  }
+
+  Future<void> _playNext() async {
+    final current = _controller;
+    if (current != null) {
+      current.removeListener(_onVideoTick);
+      await current.dispose();
+    }
+    _controller = null;
+    _index += 1;
+    if (!mounted) return;
+    await _loadAndPlayCurrent();
+  }
+
+  void _onVideoTick() {
+    final c = _controller;
+    if (c == null || !c.value.isInitialized) return;
+    final done = c.value.position >= c.value.duration && !c.value.isPlaying;
+    if (done) {
+      _playNext();
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    Future<void>.delayed(const Duration(seconds: 8), () {
+
+    Future<void>.delayed(const Duration(seconds: 20), () {
       if (!mounted) return;
-      if (!_controller.value.isInitialized || _failed) {
-        _finishOnce();
-      }
+      _finishOnce();
     });
 
-    _controller = VideoPlayerController.asset('assets/videos/launch_narmer.mp4')
-      ..initialize()
-          .then((_) {
-            if (!mounted) return;
-            setState(() {});
-            _controller.play();
-          })
-          .catchError((_) {
-            _failed = true;
-            _finishOnce();
-          });
-
-    _controller.addListener(() {
-      if (!_controller.value.isInitialized) return;
-      final finished =
-          _controller.value.position >= _controller.value.duration &&
-          !_controller.value.isPlaying;
-      if (finished) {
-        _finishOnce();
-      }
-    });
+    _loadAndPlayCurrent();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller?.removeListener(_onVideoTick);
+    _controller?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final controller = _controller;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(
         children: [
           Center(
-            child: _controller.value.isInitialized
+            child: controller != null && controller.value.isInitialized
                 ? AspectRatio(
-                    aspectRatio: _controller.value.aspectRatio,
-                    child: VideoPlayer(_controller),
+                    aspectRatio: controller.value.aspectRatio,
+                    child: VideoPlayer(controller),
                   )
                 : const CircularProgressIndicator(),
           ),

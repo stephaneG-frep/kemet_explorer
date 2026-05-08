@@ -12,29 +12,34 @@ class TimelineScreen extends StatefulWidget {
 }
 
 class _TimelineScreenState extends State<TimelineScreen> {
-  int selected = 1;
-  String pharaohFilter = 'Tout';
+  int selected = 0;
+  String historyFilter = 'Tout';
   String abydosFilter = 'Tout';
 
-  String _periodForPharaoh(TimelineEvent e) {
-    final t = e.title.toLowerCase();
-    if (t.contains('narmer') ||
-        t.contains('hor-aha') ||
-        t.contains('snéfrou') ||
+  String _periodForHistory(TimelineEvent e) {
+    final t = '${e.title} ${e.description}'.toLowerCase();
+    if (t.contains('prédynast') ||
+        t.contains('naqada') ||
+        t.contains('unification') ||
+        t.contains('premières dynasties')) {
+      return 'Prédynastique & Thinite';
+    }
+    if (t.contains('ancien empire') ||
+        t.contains('gizeh') ||
+        t.contains('pyramide') ||
         t.contains('djéser') ||
-        t.contains('khéops') ||
-        t.contains('djédefrê') ||
-        t.contains('khéphren') ||
-        t.contains('mykérinos') ||
-        t.contains('pépi')) {
+        t.contains('sphinx')) {
       return 'Ancien Empire';
     }
     if (t.contains('montouhotep') ||
+        t.contains('moyen empire') ||
         t.contains('sésostris') ||
-        t.contains('amenemhat')) {
+        t.contains('amenemhat') ||
+        t.contains('fayoum')) {
       return 'Moyen Empire';
     }
     if (t.contains('ahmôsis') ||
+        t.contains('nouvel empire') ||
         t.contains('thoutmôsis') ||
         t.contains('hatchepsout') ||
         t.contains('amenhotep') ||
@@ -42,20 +47,31 @@ class _TimelineScreenState extends State<TimelineScreen> {
         t.contains('toutânkhamon') ||
         t.contains('séthi') ||
         t.contains('ramsès') ||
-        t.contains('mérenptah')) {
+        t.contains('amarna')) {
       return 'Nouvel Empire';
+    }
+    if (t.contains('troisième période intermédiaire') ||
+        t.contains('tanis') ||
+        t.contains('libyenne') ||
+        t.contains('kouchite') ||
+        t.contains('assyr')) {
+      return '3e Période intermédiaire';
     }
     if (t.contains('psammétique') ||
         t.contains('néchao') ||
         t.contains('amasis') ||
-        t.contains('piye') ||
-        t.contains('taharqa')) {
+        t.contains('basse époque') ||
+        t.contains('perse')) {
       return 'Basse époque';
     }
     if (t.contains('alexandre') ||
-        t.contains('ptolémées') ||
+        t.contains('ptolém') ||
+        t.contains('lagide') ||
         t.contains('cléopâtre')) {
-      return 'Époque tardive';
+      return 'Ptolémaïque';
+    }
+    if (t.contains('romain')) {
+      return 'Romaine';
     }
     return 'Transition';
   }
@@ -75,27 +91,29 @@ class _TimelineScreenState extends State<TimelineScreen> {
   Widget build(BuildContext context) {
     final raw = switch (selected) {
       0 => timelineData,
-      1 => pharaohTimelineData,
       _ => abydosTimelineData,
     };
 
     final data = raw.where((e) {
-      if (selected == 1 && pharaohFilter != 'Tout') {
-        return _periodForPharaoh(e) == pharaohFilter;
+      if (selected == 0 && historyFilter != 'Tout') {
+        return _periodForHistory(e) == historyFilter;
       }
-      if (selected == 2 && abydosFilter != 'Tout') {
+      if (selected == 1 && abydosFilter != 'Tout') {
         return _groupForAbydos(e) == abydosFilter;
       }
       return true;
     }).toList();
 
-    final pharaohFilters = [
+    final historyFilters = [
       'Tout',
+      'Prédynastique & Thinite',
       'Ancien Empire',
       'Moyen Empire',
       'Nouvel Empire',
+      '3e Période intermédiaire',
       'Basse époque',
-      'Époque tardive',
+      'Ptolémaïque',
+      'Romaine',
     ];
 
     final abydosFilters = [
@@ -126,11 +144,6 @@ class _TimelineScreenState extends State<TimelineScreen> {
                       ),
                       ButtonSegment(
                         value: 1,
-                        icon: Icon(Icons.account_balance_rounded),
-                        label: Text('Pharaons'),
-                      ),
-                      ButtonSegment(
-                        value: 2,
                         icon: Icon(Icons.list_alt_rounded),
                         label: Text('Abydos'),
                       ),
@@ -144,33 +157,33 @@ class _TimelineScreenState extends State<TimelineScreen> {
               ],
             ),
           ),
-          if (selected == 2)
+          if (selected == 1)
             const Padding(
               padding: EdgeInsets.fromLTRB(16, 0, 16, 6),
               child: Text(
                 'Référence: ordre de la liste d’Abydos (Temple de Séthi Ier).',
               ),
             ),
-          if (selected == 1)
+          if (selected == 0)
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
               child: Row(
-                children: pharaohFilters
+                children: historyFilters
                     .map(
                       (f) => Padding(
                         padding: const EdgeInsets.only(right: 8),
                         child: ChoiceChip(
                           label: Text(f),
-                          selected: pharaohFilter == f,
-                          onSelected: (_) => setState(() => pharaohFilter = f),
+                          selected: historyFilter == f,
+                          onSelected: (_) => setState(() => historyFilter = f),
                         ),
                       ),
                     )
                     .toList(),
               ),
             ),
-          if (selected == 2)
+          if (selected == 1)
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
