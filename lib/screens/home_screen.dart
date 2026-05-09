@@ -13,6 +13,7 @@ import '../widgets/home_category_card.dart';
 import '../widgets/relax_background.dart';
 import 'guided_tour_screen.dart';
 import 'gallery_screen.dart';
+import 'funeral_rites_screen.dart';
 import 'history_screen.dart';
 import 'launch_video_screen.dart';
 import 'monuments_screen.dart';
@@ -176,6 +177,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return const RoyalListScreen();
       case 'monuments':
         return const MonumentsScreen();
+      case 'funeral_rites':
+        return const FuneralRitesScreen();
       case 'gallery':
         final images = GlobalGalleryData.buildImages();
         final titles = GlobalGalleryData.buildTitles();
@@ -245,6 +248,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.temple_hindu_rounded,
         Colors.teal.shade600,
         const MonumentsScreen(),
+      ),
+      (
+        'funeral_rites',
+        'Rites funéraires',
+        Icons.account_balance_wallet_rounded,
+        Colors.brown.shade500,
+        const FuneralRitesScreen(),
       ),
       (
         'gallery',

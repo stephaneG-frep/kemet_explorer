@@ -37,7 +37,7 @@ const pharaohsData = [
       'Commanditaire de la pyramide à degrés de Saqqarah.',
       'Souverain majeur du début de l’architecture monumentale en pierre.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Djoser',
   ),
   Pharaoh(
@@ -50,7 +50,7 @@ const pharaohsData = [
       'Projet pyramidal inachevé à Saqqarah.',
       'Règne important pour la transition post-Djéser.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Sekhemkhet',
   ),
   Pharaoh(
@@ -63,7 +63,7 @@ const pharaohsData = [
       'Contribue à renforcer les institutions royales naissantes.',
       'Figure clé de la consolidation de l’État égyptien ancien.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Den_(pharaoh)',
   ),
   Pharaoh(
@@ -115,7 +115,7 @@ const pharaohsData = [
       'Fait ériger la troisième grande pyramide de Gizeh.',
       'Connu par plusieurs triades sculptées remarquables.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Menkaure',
   ),
   Pharaoh(
@@ -141,7 +141,7 @@ const pharaohsData = [
       'Rôle politique et diplomatique important à la cour.',
       'Mère d’Akhenaton selon la tradition historique dominante.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Tiye',
   ),
   Pharaoh(
@@ -180,7 +180,7 @@ const pharaohsData = [
       'Associée au culte d’Aton et aux transformations religieuses.',
       'Son buste est l’une des œuvres les plus célèbres de l’Antiquité.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Nefertiti',
   ),
   Pharaoh(
@@ -206,7 +206,7 @@ const pharaohsData = [
       'Poursuit les politiques de Pépi Ier.',
       'Maintient les expéditions et les contacts avec la Nubie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Merenre_Nemtyemsaf_I',
   ),
   Pharaoh(
@@ -219,7 +219,7 @@ const pharaohsData = [
       'Dernier grand souverain de l’Ancien Empire.',
       'Son long règne précède la Première Période intermédiaire.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Pepi_II_Neferkare',
   ),
   Pharaoh(
@@ -232,7 +232,7 @@ const pharaohsData = [
       'Réunifie l’Égypte après la Première Période intermédiaire.',
       'Souvent vu comme le fondateur du Moyen Empire.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Mentuhotep_II',
   ),
   Pharaoh(
@@ -245,7 +245,7 @@ const pharaohsData = [
       'Recentre le pouvoir royal et l’administration.',
       'Ouvre une période de stabilité politique.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Amenemhat_I',
   ),
   Pharaoh(
@@ -258,7 +258,7 @@ const pharaohsData = [
       'Renforce l’État et les grands centres cultuels.',
       'Poursuit l’expansion vers la Nubie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Senusret_I',
   ),
   Pharaoh(
@@ -271,7 +271,7 @@ const pharaohsData = [
       'Consolide fortement la frontière nubienne.',
       'Réformes marquantes de l’organisation territoriale.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Senusret_III',
   ),
   Pharaoh(
@@ -284,7 +284,7 @@ const pharaohsData = [
       'Figure féminine majeure de la fin du Moyen Empire.',
       'Son règne marque une transition dynastique importante.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Sobekneferu',
   ),
   Pharaoh(
@@ -297,7 +297,7 @@ const pharaohsData = [
       'Chasse les Hyksôs et réunifie le pays.',
       'Ouvre la période du Nouvel Empire.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ahmose_I',
   ),
   Pharaoh(
@@ -310,7 +310,7 @@ const pharaohsData = [
       'Période de richesse, diplomatie et grands chantiers.',
       'Fait ériger de nombreux monuments prestigieux.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Amenhotep_III',
   ),
   Pharaoh(
@@ -349,7 +349,7 @@ const pharaohsData = [
       'Fils et successeur de Ramsès II.',
       'Connu pour la stèle mentionnant Israël.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Merneptah',
   ),
   Pharaoh(
@@ -362,7 +362,7 @@ const pharaohsData = [
       'Tombeau remarquable dans la Vallée des Reines.',
       'Associée à la diplomatie et au prestige de la cour ramesside.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Nefertari',
   ),
   Pharaoh(
@@ -401,7 +401,7 @@ const pharaohsData = [
       'Roi d’origine libyenne installé sur le trône d’Égypte.',
       'Connu dans des sources levantines sous le nom de Shishak.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Shoshenq_I',
   ),
   Pharaoh(
@@ -414,7 +414,7 @@ const pharaohsData = [
       'Restaure plusieurs sanctuaires majeurs.',
       'Figure centrale de la dynastie nubienne en Égypte.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Taharqa',
   ),
   Pharaoh(
@@ -427,7 +427,7 @@ const pharaohsData = [
       'Dernière grande figure féminine de la dynastie ramesside ancienne.',
       'Son règne s’inscrit dans un contexte politique instable.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Twosret',
   ),
   Pharaoh(
@@ -466,7 +466,7 @@ const pharaohsData = [
       'Successeur d’Alexandre dans la vallée du Nil.',
       'Pose les bases du royaume ptolémaïque.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptolemy_I_Soter',
   ),
   Pharaoh(
@@ -479,7 +479,7 @@ const pharaohsData = [
       'Souvent considéré comme l’un des derniers rois de la Ire dynastie.',
       'Période de consolidation du pouvoir dynastique ancien.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Qa%27a',
   ),
   Pharaoh(
@@ -492,7 +492,7 @@ const pharaohsData = [
       'Marque la transition vers la IVe dynastie.',
       'Figure clé de la fin des débuts de l’Ancien Empire.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Huni',
   ),
   Pharaoh(
@@ -505,7 +505,7 @@ const pharaohsData = [
       'Succède à Mykérinos.',
       'Connu pour son tombeau mastaba monumental à Saqqarah.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Shepseskaf',
   ),
   Pharaoh(
@@ -518,7 +518,7 @@ const pharaohsData = [
       'Premières attestations célèbres des Textes des pyramides.',
       'Règne charnière entre Ve et VIe dynasties.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Unas',
   ),
   Pharaoh(
@@ -531,7 +531,7 @@ const pharaohsData = [
       'Période de prospérité économique et d’aménagement du Fayoum.',
       'Figure majeure de l’apogée du Moyen Empire.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Amenemhat_III',
   ),
   Pharaoh(
@@ -544,7 +544,7 @@ const pharaohsData = [
       'Consolide l’œuvre d’Ahmôsis Ier.',
       'Associé aux débuts de la nécropole thébaine royale.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Amenhotep_I',
   ),
   Pharaoh(
@@ -557,7 +557,7 @@ const pharaohsData = [
       'Étend l’influence égyptienne vers le Proche-Orient.',
       'Lance une dynamique impériale reprise par ses successeurs.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Thutmose_I',
   ),
   Pharaoh(
@@ -570,7 +570,7 @@ const pharaohsData = [
       'Époux d’Hatchepsout.',
       'Règne court dans un contexte de continuité dynastique.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Thutmose_II',
   ),
   Pharaoh(
@@ -583,7 +583,7 @@ const pharaohsData = [
       'Réorganise l’État après la période amarnienne.',
       'Prépare la transition vers la XIXe dynastie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Horemheb',
   ),
   Pharaoh(
@@ -596,7 +596,7 @@ const pharaohsData = [
       'Ancien général devenu pharaon.',
       'Ouvre la dynastie ramesside.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ramesses_I',
   ),
   Pharaoh(
@@ -609,7 +609,7 @@ const pharaohsData = [
       'Période de tensions de succession.',
       'Fait partie de la phase tardive de la XIXe dynastie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Seti_II',
   ),
   Pharaoh(
@@ -622,7 +622,7 @@ const pharaohsData = [
       'Souverain d’une phase politique instable.',
       'Son règne précède celui de Taousert.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Siptah',
   ),
   Pharaoh(
@@ -635,7 +635,7 @@ const pharaohsData = [
       'Lance de grandes expéditions de carrières.',
       'Poursuit les traditions monumentales ramessides.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ramesses_IV',
   ),
   Pharaoh(
@@ -648,7 +648,7 @@ const pharaohsData = [
       'Continue les usages royaux tardifs de la période.',
       'Son tombeau est l’un des plus visités de la Vallée des Rois.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ramesses_VI',
   ),
   Pharaoh(
@@ -661,7 +661,7 @@ const pharaohsData = [
       'Fait édifier et restaurer plusieurs monuments.',
       'Règne important de la dynastie bubastite.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Osorkon_II',
   ),
   Pharaoh(
@@ -674,7 +674,7 @@ const pharaohsData = [
       'Associe son nom à des projets nautiques majeurs.',
       'Intervient dans les affaires du Levant.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Necho_II',
   ),
   Pharaoh(
@@ -687,7 +687,7 @@ const pharaohsData = [
       'Période de prospérité et de contacts renforcés avec le monde grec.',
       'Dernier grand roi saïte avant la conquête perse.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Amasis_II',
   ),
   Pharaoh(
@@ -700,7 +700,7 @@ const pharaohsData = [
       'Âge d’or culturel d’Alexandrie.',
       'Développement des institutions savantes et religieuses lagides.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptolemy_II_Philadelphus',
   ),
   Pharaoh(
@@ -713,7 +713,7 @@ const pharaohsData = [
       'Période d’expansion militaire lagide.',
       'Soutient activement les grands sanctuaires égyptiens.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptolemy_III_Euergetes',
   ),
   Pharaoh(
@@ -726,7 +726,7 @@ const pharaohsData = [
       'Associé au décret de Memphis gravé sur la pierre de Rosette.',
       'Règne marqué par des tensions externes et internes.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptolemy_V_Epiphanes',
   ),
   Pharaoh(
@@ -739,7 +739,7 @@ const pharaohsData = [
       'Affermit la puissance de Thèbes avant la réunification.',
       'Figure clé de la montée de la XIe dynastie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Intef_II',
   ),
   Pharaoh(
@@ -752,7 +752,7 @@ const pharaohsData = [
       'Père de Montouhotep II.',
       'Contribue à préparer la réunification de l’Égypte.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Intef_III',
   ),
   Pharaoh(
@@ -765,7 +765,7 @@ const pharaohsData = [
       'Lutte décisive contre les Hyksôs.',
       'Prépare la victoire finale d’Ahmôsis Ier.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Kamose',
   ),
   Pharaoh(
@@ -778,7 +778,7 @@ const pharaohsData = [
       'Succède à Toutânkhamon.',
       'Période de transition avant Horemheb.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ay',
   ),
   Pharaoh(
@@ -791,7 +791,7 @@ const pharaohsData = [
       'Période de difficultés économiques croissantes.',
       'Règne du déclin progressif du pouvoir ramesside.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ramesses_VII',
   ),
   Pharaoh(
@@ -804,7 +804,7 @@ const pharaohsData = [
       'Connu pour des archives judiciaires sur les pillages de tombes.',
       'Souverain d’une période de fortes tensions internes.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ramesses_IX',
   ),
   Pharaoh(
@@ -817,7 +817,7 @@ const pharaohsData = [
       'Installe son pouvoir dans le Delta.',
       'Ouvre la période des dynasties tanites.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Smendes',
   ),
   Pharaoh(
@@ -830,7 +830,7 @@ const pharaohsData = [
       'Connu pour son tombeau presque intact à Tanis.',
       'Règne marquant du nord de l’Égypte.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Psusennes_I',
   ),
   Pharaoh(
@@ -843,7 +843,7 @@ const pharaohsData = [
       'Fait face à des rivalités régionales en Haute Égypte.',
       'Période de fragmentation politique.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Takelot_II',
   ),
   Pharaoh(
@@ -856,7 +856,7 @@ const pharaohsData = [
       'Initie la conquête nubienne de l’Égypte.',
       'Connu pour sa grande stèle triomphale.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Piye',
   ),
   Pharaoh(
@@ -869,7 +869,7 @@ const pharaohsData = [
       'Consolide la domination nubienne sur l’Égypte.',
       'Associé à la transmission de traditions religieuses memphites.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Shabaka',
   ),
   Pharaoh(
@@ -882,7 +882,7 @@ const pharaohsData = [
       'S’inscrit dans la continuité culturelle koushite-égyptienne.',
       'Roi important de la mémoire post-XXVe dynastie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Aspelta',
   ),
   Pharaoh(
@@ -895,7 +895,7 @@ const pharaohsData = [
       'Conquiert l’Égypte pour l’empire perse.',
       'Débute la XXVIIe dynastie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Cambyses_II',
   ),
   Pharaoh(
@@ -908,7 +908,7 @@ const pharaohsData = [
       'Met en place des réformes administratives et fiscales.',
       'Encourage aussi des travaux monumentaux en Égypte.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Darius_the_Great',
   ),
   Pharaoh(
@@ -921,7 +921,7 @@ const pharaohsData = [
       'Rétablit la domination perse après les dynasties indigènes tardives.',
       'Période précédant la conquête macédonienne.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Artaxerxes_III',
   ),
   Pharaoh(
@@ -934,7 +934,7 @@ const pharaohsData = [
       'Renforce l’indépendance égyptienne face aux Perses.',
       'Important programme religieux et monumental.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Nectanebo_I',
   ),
   Pharaoh(
@@ -947,7 +947,7 @@ const pharaohsData = [
       'Mène des campagnes militaires coûteuses.',
       'Règne bref entre Nectanébo Ier et Nectanébo II.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Teos_of_Egypt',
   ),
   Pharaoh(
@@ -960,7 +960,7 @@ const pharaohsData = [
       'Dernier souverain autochtone avant le retour perse.',
       'Figure symbolique de la fin des dynasties nationales.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Nectanebo_II',
   ),
   Pharaoh(
@@ -973,7 +973,7 @@ const pharaohsData = [
       'Active au IIIe siècle av. J.-C.',
       'Figure royale et cultuelle importante de l’époque lagide.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Berenice_II_of_Egypt',
   ),
   Pharaoh(
@@ -986,7 +986,7 @@ const pharaohsData = [
       'Rôle politique et religieux majeur au IIIe siècle av. J.-C.',
       'Divinisée dans le culte dynastique lagide.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Arsinoe_II',
   ),
   Pharaoh(
@@ -999,7 +999,7 @@ const pharaohsData = [
       'Co-règne complexe avec Cléopâtre II et Ptolémée VIII.',
       'Période de rivalités dynastiques marquées.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptolemy_VI_Philometor',
   ),
   Pharaoh(
@@ -1012,7 +1012,7 @@ const pharaohsData = [
       'Connu pour des conflits dynastiques intenses.',
       'Règne important de la période lagide tardive.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptolemy_VIII_Phycon',
   ),
   Pharaoh(
@@ -1025,7 +1025,7 @@ const pharaohsData = [
       'Joue un rôle central dans les conflits familiaux lagides.',
       'Figure politique majeure d’Alexandrie.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Cleopatra_II_of_Egypt',
   ),
   Pharaoh(
@@ -1038,7 +1038,7 @@ const pharaohsData = [
       'Exerce un pouvoir fort au cœur de la dynastie.',
       'Participe à plusieurs co-règnes successifs.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Cleopatra_III_of_Egypt',
   ),
   Pharaoh(
@@ -1051,7 +1051,7 @@ const pharaohsData = [
       'Père de Cléopâtre VII.',
       'Dépendance diplomatique accrue envers Rome.',
     ],
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Ptolemy_XII_Auletes',
   ),
 ];

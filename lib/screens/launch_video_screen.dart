@@ -12,7 +12,7 @@ class LaunchVideoScreen extends StatefulWidget {
 
 class _LaunchVideoScreenState extends State<LaunchVideoScreen> {
   static const _playlist = [
-    'assets/videos/narmer_video.mp4',
+    'assets/videos/narmer.mp4',
     'assets/videos/cleopatre_video.mp4',
   ];
 

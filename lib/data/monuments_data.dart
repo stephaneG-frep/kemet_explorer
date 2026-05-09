@@ -202,7 +202,7 @@ const monumentsData = [
     category: 'Temple funéraire',
     importance:
         'Complexe de Ramsès III connu pour ses murs massifs et ses reliefs historiques détaillés.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     highlights: [
       'Photo à venir.',
       'Reliefs des conflits contre les Peuples de la mer.',
@@ -218,7 +218,7 @@ const monumentsData = [
     category: 'Temple funéraire',
     importance:
         'Temple funéraire de Ramsès II, célèbre pour ses colosses et son rôle mémoriel royal.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     highlights: [
       'Photo à venir.',
       'Monument clé de la propagande ramesside.',
@@ -248,7 +248,7 @@ const monumentsData = [
     category: 'Temple',
     importance:
         'Temple tardif remarquable pour ses colonnes et inscriptions bien conservées.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     highlights: [
       'Photo à venir.',
       'Décor polychrome restauré.',
@@ -291,7 +291,7 @@ const monumentsData = [
     category: 'Pyramides',
     importance:
         'Monument de transition architectural entre formes anciennes et pyramides classiques.',
-    imagePath: 'assets/images/placeholder.png',
+    imagePath: 'assets/images/kemet_1.png',
     highlights: [
       'Photo à venir.',
       'Structure partiellement effondrée très étudiée.',

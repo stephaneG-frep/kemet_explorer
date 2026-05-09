@@ -130,4 +130,187 @@ const mythStoriesData = [
       'Protéger le foyer, c’est protéger la société entière.',
     ],
   ),
+  MythStory(
+    id: 'contendings_horus_seth',
+    title: 'Les Contestations d’Horus et Seth',
+    theme: 'Pouvoir, légitimité et justice divine',
+    summary:
+        'Horus et Seth s’affrontent dans une longue série d’épreuves pour le trône.',
+    story:
+        'Après la mort d’Osiris, Seth revendique le pouvoir, mais Horus défend son droit d’héritier. Les dieux organisent alors des épreuves: force physique, ruse, endurance et plaidoyers devant un tribunal divin. Le conflit dure, se répète, et montre qu’un pouvoir légitime ne se fonde pas seulement sur la violence. Finalement, Horus est reconnu comme roi légitime. Le récit met en scène une idée forte: la souveraineté doit être validée par l’ordre divin et la justice.',
+    imagePath: 'assets/images/horus.webp',
+    imageSourceUrl:
+        'https://en.wikipedia.org/wiki/The_Contendings_of_Horus_and_Set',
+    keyLessons: [
+      'La légitimité demande preuve et reconnaissance.',
+      'La justice institutionnelle limite la force brute.',
+    ],
+  ),
+  MythStory(
+    id: 'seven_scorpions',
+    title: 'Isis et les Sept Scorpions',
+    theme: 'Protection, compassion et guérison',
+    summary:
+        'Isis protège son fils Horus et guérit un enfant grâce à la parole sacrée.',
+    story:
+        'Pour fuir le danger, Isis voyage avec son fils Horus et sept scorpions protecteurs. Dans une maison, une femme refuse de les accueillir; plus loin, une autre les aide humblement. Les scorpions, en colère, piquent l’enfant de la femme riche. Isis, touchée par la détresse maternelle, prononce des formules de guérison et sauve l’enfant. Le récit souligne que la protection divine ne sert pas la vengeance: elle restaure la vie et l’équilibre.',
+    imagePath: 'assets/images/isis.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Isis',
+    keyLessons: [
+      'La compassion peut rompre le cycle de la colère.',
+      'Le pouvoir sacré est orienté vers la guérison.',
+    ],
+  ),
+  MythStory(
+    id: 'heavenly_cow',
+    title: 'La Vache Céleste',
+    theme: 'Crise du monde et réorganisation cosmique',
+    summary:
+        'Râ, face à la révolte humaine, réorganise l’univers pour préserver l’ordre.',
+    story:
+        'Lorsque les humains complotent contre Râ, la déesse prend une forme redoutable pour rétablir l’ordre. Le danger devient extrême, et les dieux doivent freiner la destruction. Râ choisit alors de se retirer du monde terrestre et de monter au ciel sur la Vache céleste. Le cosmos est réorganisé: les distances entre dieux et humains changent, et l’ordre du monde devient plus fragile mais durable. Ce récit explique pourquoi l’harmonie doit être constamment entretenue.',
+    imagePath: 'assets/images/ra.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Book_of_the_Heavenly_Cow',
+    keyLessons: [
+      'Un ordre blessé demande une réorganisation profonde.',
+      'Le pouvoir doit savoir se limiter pour durer.',
+    ],
+  ),
+  MythStory(
+    id: 'khonsu_bekhten',
+    title: 'Khonsou et la Princesse de Bekhten',
+    theme: 'Guérison et rayonnement des temples',
+    summary:
+        'Khonsou est invoqué pour guérir une princesse lointaine frappée d’un mal mystérieux.',
+    story:
+        'Une princesse étrangère tombe gravement malade, et les guérisseurs locaux échouent. Le pharaon envoie alors une statue sacrée de Khonsou, dieu lunaire et guérisseur, accompagnée de prêtres. À l’arrivée du dieu, le mal recule et la princesse retrouve la santé. Le récit montre le prestige religieux de l’Égypte et la circulation des cultes au-delà de ses frontières. Il insiste aussi sur la puissance thérapeutique des rites et de la présence divine.',
+    imagePath: 'assets/images/khonsou.png',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Khonsu',
+    keyLessons: [
+      'Le soin peut unir des peuples différents.',
+      'Le rituel est présenté comme une médecine du corps et de l’âme.',
+    ],
+  ),
+  MythStory(
+    id: 'book_of_thoth',
+    title: 'Le Livre de Thot',
+    theme: 'Savoir interdit et responsabilité',
+    summary:
+        'Un homme cherche un savoir absolu et découvre le prix d’un pouvoir mal maîtrisé.',
+    story:
+        'Dans les récits tardifs, un héros ambitieux veut s’emparer d’un livre sacré attribué à Thot, promettant la maîtrise des secrets du monde. Il y parvient, mais ce savoir sans mesure attire les épreuves: pertes, illusions et chute personnelle. Après de grandes souffrances, il comprend que la connaissance sacrée exige discipline et humilité. Le récit met en garde contre la confusion entre sagesse et domination.',
+    imagePath: 'assets/images/thoth.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Thoth',
+    keyLessons: [
+      'Le savoir sans éthique devient dangereux.',
+      'La vraie sagesse inclut la limite et la responsabilité.',
+    ],
+  ),
+  MythStory(
+    id: 'shipwrecked_sailor',
+    title: 'Le Conte du Naufragé',
+    theme: 'Destin, peur et confiance',
+    summary:
+        'Un marin perdu rencontre un grand serpent qui lui révèle le sens de l’épreuve.',
+    story:
+        'Après un naufrage, un marin échoue sur une île merveilleuse. Il y rencontre un immense serpent qui lui parle avec sagesse. Le serpent lui annonce qu’il sera sauvé et retrouvera sa maison, mais que l’île disparaîtra ensuite. Rentré vivant, le marin comprend que la peur n’est pas une fin: elle peut devenir passage vers une parole plus profonde. Ce récit ancien, entre merveilleux et réflexion morale, parle de confiance au cœur de l’incertitude.',
+    imagePath: 'assets/images/kemet_1.png',
+    imageSourceUrl:
+        'https://en.wikipedia.org/wiki/Tale_of_the_shipwrecked_sailor',
+    keyLessons: [
+      'L’épreuve peut devenir une école intérieure.',
+      'L’espérance aide à traverser l’inconnu.',
+    ],
+  ),
+  MythStory(
+    id: 'destruction_of_mankind',
+    title: 'La Destruction de l’Humanité',
+    theme: 'Colère divine et survie du monde',
+    summary:
+        'Râ punit la révolte humaine, puis les dieux cherchent à arrêter la destruction.',
+    story:
+        'Les humains complotent contre Râ, et la déesse guerrière est envoyée pour rétablir l’ordre. Mais la violence devient incontrôlable, menaçant toute vie. Les dieux élaborent alors une ruse pour transformer la fureur en apaisement. Le récit insiste sur un point essentiel: la justice sans mesure peut devenir destruction totale. Le salut du monde passe par l’équilibre retrouvé entre force et compassion.',
+    imagePath: 'assets/images/ra.webp',
+    imageSourceUrl:
+        'https://en.wikipedia.org/wiki/The_Book_of_the_Heavenly_Cow',
+    keyLessons: [
+      'Même la justice doit rester proportionnée.',
+      'L’ordre durable suppose la maîtrise de la force.',
+    ],
+  ),
+  MythStory(
+    id: 'osiris_judgment_hall',
+    title: 'Le Tribunal d’Osiris',
+    theme: 'Jugement, vérité et destinée',
+    summary:
+        'Dans la salle du jugement, la vérité de la vie passée est révélée.',
+    story:
+        'Le défunt se présente devant Osiris et les juges divins. Il proclame une “confession négative”, affirmant ne pas avoir commis de fautes graves contre les hommes et les dieux. La pesée du cœur confirme ensuite cette parole. Le tribunal n’est pas seulement une menace: il incarne l’idée qu’une vie juste ouvre un avenir. Le récit relie morale, responsabilité et espérance d’éternité.',
+    imagePath: 'assets/images/osiris.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Osiris',
+    keyLessons: [
+      'La vérité est au centre de toute justice.',
+      'La responsabilité personnelle donne sens au destin.',
+    ],
+  ),
+  MythStory(
+    id: 'birth_of_horus',
+    title: 'La Naissance Cachée d’Horus',
+    theme: 'Protection de l’enfance divine',
+    summary:
+        'Isis cache et protège Horus enfant pour préserver la lignée royale.',
+    story:
+        'Après la mort d’Osiris, Isis se retire dans les marais du Delta pour protéger son fils Horus des menaces de Seth. Elle s’appuie sur des formules magiques, des divinités protectrices et des guérisons rituelles. Horus grandit dans un monde fragile, entre maladie, danger et protection maternelle. Ce récit met en valeur la force de la maternité sacrée et l’importance de la transmission.',
+    imagePath: 'assets/images/isis.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Horus',
+    keyLessons: [
+      'Protéger l’enfance, c’est protéger l’avenir du monde.',
+      'La transmission exige patience et vigilance.',
+    ],
+  ),
+  MythStory(
+    id: 'amduat_journey',
+    title: 'Le Voyage Nocturne dans l’Amduat',
+    theme: 'Nuit cosmique et renaissance',
+    summary:
+        'Le soleil traverse douze heures nocturnes avant de renaître à l’aube.',
+    story:
+        'Chaque nuit, la barque solaire entre dans l’Amduat, royaume mystérieux structuré en douze étapes. Le dieu soleil y rencontre des alliés, des portes à franchir et des forces hostiles à neutraliser. Ce parcours symbolise un travail intérieur du cosmos: traverser l’obscurité pour retrouver la lumière. Les tombes royales reprennent ce schéma pour accompagner le défunt dans sa propre renaissance.',
+    imagePath: 'assets/images/ra.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Amduat',
+    keyLessons: [
+      'La renaissance passe par une traversée de l’ombre.',
+      'Le temps nocturne est pensé comme un chemin initiatique.',
+    ],
+  ),
+  MythStory(
+    id: 'opening_of_mouth',
+    title: 'Le Rituel de l’Ouverture de la Bouche',
+    theme: 'Renaissance rituelle',
+    summary:
+        'Le rite redonne symboliquement souffle, parole et sens au défunt.',
+    story:
+        'Lors des funérailles, un prêtre touche la bouche et les sens de la momie ou de la statue avec des instruments rituels. Ce geste ne vise pas un miracle matériel, mais une restauration symbolique des fonctions vitales dans l’au-delà: respirer, parler, voir, entendre. Le rite relie la mort à une nouvelle forme d’existence. Il exprime la conviction qu’un être peut continuer à vivre s’il est reconnu par les gestes justes.',
+    imagePath: 'assets/images/anubis.webp',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Open_mouth_ceremony',
+    keyLessons: [
+      'Les rites donnent forme au passage entre les mondes.',
+      'La mémoire collective soutient la continuité de la personne.',
+    ],
+  ),
+  MythStory(
+    id: 'book_of_gates',
+    title: 'Le Livre des Portes',
+    theme: 'Passage, épreuve et lumière',
+    summary:
+        'Le soleil franchit des portes nocturnes gardées avant de renaître.',
+    story:
+        'Dans ce grand texte funéraire, la nuit est divisée en sections séparées par des portes gardées. Le dieu solaire doit prononcer les noms justes et suivre l’ordre du parcours pour continuer sa route. Les âmes justes sont associées à ce mouvement vers la lumière, tandis que le désordre est tenu à distance. Le récit transforme le voyage nocturne en pédagogie spirituelle: franchir chaque étape avec justesse.',
+    imagePath: 'assets/images/kemet_1.png',
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Book_of_Gates',
+    keyLessons: [
+      'Connaître les passages, c’est traverser la peur.',
+      'La lumière finale est le fruit d’un chemin ordonné.',
+    ],
+  ),
 ];
