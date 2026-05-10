@@ -12,14 +12,24 @@ class HistoryScreen extends StatefulWidget {
 
 class _HistoryScreenState extends State<HistoryScreen> {
   String query = '';
+  int selected = 0;
 
   @override
   Widget build(BuildContext context) {
-    final filtered = historyData
+    final filteredPeriods = historyData
         .where(
           (p) =>
               p.name.toLowerCase().contains(query.toLowerCase()) ||
               p.description.toLowerCase().contains(query.toLowerCase()),
+        )
+        .toList();
+
+    final filteredConflicts = majorConflictData
+        .where(
+          (e) =>
+              e.title.toLowerCase().contains(query.toLowerCase()) ||
+              e.description.toLowerCase().contains(query.toLowerCase()) ||
+              e.date.toLowerCase().contains(query.toLowerCase()),
         )
         .toList();
 
@@ -29,17 +39,38 @@ class _HistoryScreenState extends State<HistoryScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            SegmentedButton<int>(
+              segments: const [
+                ButtonSegment(
+                  value: 0,
+                  icon: Icon(Icons.history_edu_rounded),
+                  label: Text('Périodes'),
+                ),
+                ButtonSegment(
+                  value: 1,
+                  icon: Icon(Icons.gavel_rounded),
+                  label: Text('Guerres & batailles'),
+                ),
+              ],
+              selected: {selected},
+              onSelectionChanged: (set) => setState(() => selected = set.first),
+            ),
+            const SizedBox(height: 12),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Frise des grandes périodes de l’Égypte antique',
+                selected == 0
+                    ? 'Frise des grandes périodes de l’Égypte antique'
+                    : 'Conflits majeurs, guerres et batailles',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
             const SizedBox(height: 10),
             TextField(
-              decoration: const InputDecoration(
-                hintText: 'Rechercher une période...',
+              decoration: InputDecoration(
+                hintText: selected == 0
+                    ? 'Rechercher une période...'
+                    : 'Rechercher un conflit ou une bataille...',
                 prefixIcon: Icon(Icons.search_rounded),
               ),
               onChanged: (value) => setState(() => query = value),
@@ -47,14 +78,25 @@ class _HistoryScreenState extends State<HistoryScreen> {
             const SizedBox(height: 12),
             Expanded(
               child: ListView.builder(
-                itemCount: filtered.length,
+                itemCount: selected == 0
+                    ? filteredPeriods.length
+                    : filteredConflicts.length,
                 itemBuilder: (context, index) {
-                  final item = filtered[index];
+                  if (selected == 0) {
+                    final item = filteredPeriods[index];
+                    return TimelineItem(
+                      date: item.dateRange,
+                      title: item.name,
+                      description: item.description,
+                      isLast: index == filteredPeriods.length - 1,
+                    );
+                  }
+                  final event = filteredConflicts[index];
                   return TimelineItem(
-                    date: item.dateRange,
-                    title: item.name,
-                    description: item.description,
-                    isLast: index == filtered.length - 1,
+                    date: event.date,
+                    title: event.title,
+                    description: event.description,
+                    isLast: index == filteredConflicts.length - 1,
                   );
                 },
               ),

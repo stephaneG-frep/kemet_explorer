@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 import '../data/gods_data.dart';
 import '../data/global_gallery_data.dart';
@@ -8,12 +9,13 @@ import '../data/pharaohs_data.dart';
 import '../data/quiz_data.dart';
 import '../services/ambience_service.dart';
 import '../services/local_storage_service.dart';
-import '../services/pdf_export_service.dart';
 import '../widgets/home_category_card.dart';
 import '../widgets/relax_background.dart';
+import 'help_guide_screen.dart';
 import 'guided_tour_screen.dart';
 import 'gallery_screen.dart';
 import 'funeral_rites_screen.dart';
+import 'chatbot_screen.dart';
 import 'history_screen.dart';
 import 'launch_video_screen.dart';
 import 'monuments_screen.dart';
@@ -37,12 +39,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final storage = LocalStorageService();
-  final pdfExport = PdfExportService();
   final Set<String> favorites = <String>{};
   bool loadingFavorites = true;
   int bestQuizScore = 0;
   String? lastSection;
   bool ambienceOn = false;
+  int _homeStyleNonce = 1;
 
   @override
   void initState() {
@@ -157,6 +159,32 @@ class _HomeScreenState extends State<HomeScreen> {
     if (!mounted) return;
     setState(() => lastSection = key);
     await Navigator.of(context).push(_buildRoute(page));
+    if (!mounted) return;
+    setState(() => _homeStyleNonce++);
+  }
+
+  List<Color> _gradientPair(Color color, int index) {
+    final random = Random((_homeStyleNonce * 97) + (index * 13));
+    final hsl = HSLColor.fromColor(color);
+    final hueShift = random.nextDouble() * 28 - 14;
+    final satShift = random.nextDouble() * 0.14 - 0.07;
+    final lightShift = random.nextDouble() * 0.18 - 0.09;
+    final shifted = hsl
+        .withHue((hsl.hue + hueShift) % 360)
+        .withSaturation((hsl.saturation + satShift).clamp(0.2, 1.0))
+        .withLightness((hsl.lightness + lightShift).clamp(0.2, 0.82));
+    final lighter = shifted.withLightness(
+      (shifted.lightness + 0.12).clamp(0.0, 1.0),
+    );
+    final darker = shifted.withLightness(
+      (shifted.lightness - 0.16).clamp(0.0, 1.0),
+    );
+    return [lighter.toColor(), darker.toColor()];
+  }
+
+  double _radiusFor(int index) {
+    final random = Random((_homeStyleNonce * 41) + (index * 19));
+    return 14 + random.nextInt(14).toDouble();
   }
 
   Widget? _pageForKey(String? key) {
@@ -183,6 +211,10 @@ class _HomeScreenState extends State<HomeScreen> {
         final images = GlobalGalleryData.buildImages();
         final titles = GlobalGalleryData.buildTitles();
         return GalleryScreen(images: images, titles: titles);
+      case 'help_guide':
+        return const HelpGuideScreen();
+      case 'chatbot':
+        return const ChatbotScreen();
       case 'symbols':
         return const SymbolsScreen();
       case 'timeline':
@@ -267,6 +299,20 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       (
+        'chatbot',
+        'Chatbot',
+        Icons.smart_toy_rounded,
+        Colors.lightBlue.shade700,
+        const ChatbotScreen(),
+      ),
+      (
+        'help_guide',
+        'Mode d’emploi',
+        Icons.school_rounded,
+        Colors.deepOrange.shade300,
+        const HelpGuideScreen(),
+      ),
+      (
         'symbols',
         'Symboles',
         Icons.stars_rounded,
@@ -319,6 +365,8 @@ class _HomeScreenState extends State<HomeScreen> {
         QuizScreen(onQuizFinished: refreshBestScore),
       ),
     ];
+    final displayedCategories = [...categories]
+      ..shuffle(Random(_homeStyleNonce * 17));
 
     return Scaffold(
       appBar: AppBar(
@@ -337,15 +385,10 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: _toggleAmbience,
           ),
           IconButton(
-            icon: const Icon(Icons.picture_as_pdf_rounded),
-            onPressed: () => pdfExport.exportKemetBooklet(
-              title: 'Carnet de visite Kemet',
-              sections: [
-                'Favoris enregistrés: ${favorites.length}',
-                'Meilleur score Quiz: $bestQuizScore/${quizData.length}',
-                'Parcours détente conseillé: Histoire > Mythologie > Monuments > Symboles',
-              ],
-            ),
+            icon: const Icon(Icons.help_outline_rounded),
+            tooltip: 'Mode d’emploi',
+            onPressed: () =>
+                _openSection('help_guide', const HelpGuideScreen()),
           ),
         ],
       ),
@@ -443,38 +486,109 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(height: 12),
                       Expanded(
-                        child: GridView.builder(
-                          itemCount: categories.length,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                childAspectRatio: 1.12,
-                                crossAxisSpacing: 12,
-                                mainAxisSpacing: 12,
-                              ),
-                          itemBuilder: (context, index) {
-                            final item = categories[index];
-                            return TweenAnimationBuilder<double>(
-                              tween: Tween(begin: 0, end: 1),
-                              duration: Duration(
-                                milliseconds: 300 + (index * 70),
-                              ),
-                              curve: Curves.easeOut,
-                              builder: (context, value, child) => Opacity(
-                                opacity: value,
-                                child: Transform.translate(
-                                  offset: Offset(0, (1 - value) * 14),
-                                  child: child,
+                        child: ListView(
+                          children: [
+                            if (displayedCategories.isNotEmpty)
+                              SizedBox(
+                                height: 164 + ((_homeStyleNonce % 3) * 10),
+                                child: HomeCategoryCard(
+                                  title: displayedCategories[0].$2,
+                                  icon: displayedCategories[0].$3,
+                                  color: displayedCategories[0].$4,
+                                  borderRadius: _radiusFor(0),
+                                  gradientColors: _gradientPair(
+                                    displayedCategories[0].$4,
+                                    0,
+                                  ),
+                                  onTap: () => _openSection(
+                                    displayedCategories[0].$1,
+                                    displayedCategories[0].$5,
+                                  ),
                                 ),
                               ),
-                              child: HomeCategoryCard(
-                                title: item.$2,
-                                icon: item.$3,
-                                color: item.$4,
-                                onTap: () => _openSection(item.$1, item.$5),
+                            const SizedBox(height: 12),
+                            for (
+                              int i = 1;
+                              i < displayedCategories.length;
+                              i += 3
+                            ) ...[
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  if (i < displayedCategories.length)
+                                    Expanded(
+                                      flex: 6,
+                                      child: SizedBox(
+                                        height:
+                                            176 +
+                                            (((_homeStyleNonce + i) % 3) * 8),
+                                        child: HomeCategoryCard(
+                                          title: displayedCategories[i].$2,
+                                          icon: displayedCategories[i].$3,
+                                          color: displayedCategories[i].$4,
+                                          borderRadius: _radiusFor(i),
+                                          gradientColors: _gradientPair(
+                                            displayedCategories[i].$4,
+                                            i,
+                                          ),
+                                          onTap: () => _openSection(
+                                            displayedCategories[i].$1,
+                                            displayedCategories[i].$5,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  if (i + 1 < displayedCategories.length) ...[
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      flex: 4,
+                                      child: SizedBox(
+                                        height:
+                                            122 +
+                                            (((_homeStyleNonce + i) % 2) * 10),
+                                        child: HomeCategoryCard(
+                                          title: displayedCategories[i + 1].$2,
+                                          icon: displayedCategories[i + 1].$3,
+                                          color: displayedCategories[i + 1].$4,
+                                          borderRadius: _radiusFor(i + 1),
+                                          gradientColors: _gradientPair(
+                                            displayedCategories[i + 1].$4,
+                                            i + 1,
+                                          ),
+                                          onTap: () => _openSection(
+                                            displayedCategories[i + 1].$1,
+                                            displayedCategories[i + 1].$5,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ],
                               ),
-                            );
-                          },
+                              if (i + 2 < displayedCategories.length) ...[
+                                const SizedBox(height: 12),
+                                SizedBox(
+                                  height:
+                                      116 + (((_homeStyleNonce + i) % 3) * 10),
+                                  child: HomeCategoryCard(
+                                    title: displayedCategories[i + 2].$2,
+                                    icon: displayedCategories[i + 2].$3,
+                                    color: displayedCategories[i + 2].$4,
+                                    borderRadius: _radiusFor(i + 2),
+                                    gradientColors: _gradientPair(
+                                      displayedCategories[i + 2].$4,
+                                      i + 2,
+                                    ),
+                                    onTap: () => _openSection(
+                                      displayedCategories[i + 2].$1,
+                                      displayedCategories[i + 2].$5,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                              const SizedBox(height: 12),
+                            ],
+                          ],
                         ),
                       ),
                     ],

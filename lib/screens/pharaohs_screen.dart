@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/global_gallery_data.dart';
 import '../data/pharaohs_data.dart';
+import '../models/pharaoh.dart';
 import '../widgets/info_card.dart';
 import 'detail_screen.dart';
 
@@ -22,6 +23,35 @@ class PharaohsScreen extends StatefulWidget {
 class _PharaohsScreenState extends State<PharaohsScreen> {
   String query = '';
   String selectedDynasty = 'Toutes';
+
+  int _fallbackYearForEra(String era) {
+    final e = era.toLowerCase();
+    if (e.contains('thinite') || e.contains('ire dynastie')) return -3000;
+    if (e.contains('ancien empire')) return -2600;
+    if (e.contains('première période intermédiaire')) return -2100;
+    if (e.contains('moyen empire')) return -1900;
+    if (e.contains('deuxième période intermédiaire')) return -1600;
+    if (e.contains('nouvel empire')) return -1400;
+    if (e.contains('troisième période intermédiaire')) return -1000;
+    if (e.contains('basse époque')) return -700;
+    if (e.contains('première domination perse')) return -525;
+    if (e.contains('seconde domination perse')) return -343;
+    if (e.contains('ptolémaïque')) return -300;
+    return 0;
+  }
+
+  int _startYearFor(Pharaoh p) {
+    final text = '${p.facts.join(' ')} ${p.era} ${p.role}'.toLowerCase();
+    final yearMatch = RegExp(r'(\d{2,4})').firstMatch(text);
+    if (yearMatch == null) return _fallbackYearForEra(p.era);
+
+    final value = int.tryParse(yearMatch.group(1) ?? '');
+    if (value == null) return _fallbackYearForEra(p.era);
+
+    if (text.contains('av. j.-c')) return -value;
+    if (text.contains('apr. j.-c')) return value;
+    return _fallbackYearForEra(p.era);
+  }
 
   String _extractDynastyLabel(String era, String role) {
     final lowerRole = role.toLowerCase();
@@ -54,16 +84,21 @@ class _PharaohsScreenState extends State<PharaohsScreen> {
       'Toutes',
       ...pharaohsData.map((p) => _extractDynastyLabel(p.era, p.role)),
     }.toList();
-    final filtered = pharaohsData.where((p) {
-      final matchesQuery =
-          p.name.toLowerCase().contains(query.toLowerCase()) ||
-          p.era.toLowerCase().contains(query.toLowerCase()) ||
-          p.role.toLowerCase().contains(query.toLowerCase());
-      final dynasty = _extractDynastyLabel(p.era, p.role);
-      final matchesDynasty =
-          selectedDynasty == 'Toutes' || dynasty == selectedDynasty;
-      return matchesQuery && matchesDynasty;
-    }).toList();
+    final filtered =
+        pharaohsData.where((p) {
+          final matchesQuery =
+              p.name.toLowerCase().contains(query.toLowerCase()) ||
+              p.era.toLowerCase().contains(query.toLowerCase()) ||
+              p.role.toLowerCase().contains(query.toLowerCase());
+          final dynasty = _extractDynastyLabel(p.era, p.role);
+          final matchesDynasty =
+              selectedDynasty == 'Toutes' || dynasty == selectedDynasty;
+          return matchesQuery && matchesDynasty;
+        }).toList()..sort((a, b) {
+          final yearCompare = _startYearFor(a).compareTo(_startYearFor(b));
+          if (yearCompare != 0) return yearCompare;
+          return a.name.compareTo(b.name);
+        });
 
     return Scaffold(
       appBar: AppBar(title: const Text('Kemet Explorer')),

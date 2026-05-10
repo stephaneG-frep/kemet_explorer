@@ -94,6 +94,75 @@ const historyData = [
   ),
 ];
 
+const majorConflictData = [
+  TimelineEvent(
+    date: 'c. 1550 av. J.-C.',
+    title: 'Guerre de libération contre les Hyksôs',
+    description:
+        'Ahmôsis Ier et ses prédécesseurs thébains repoussent les Hyksôs et réunifient l’Égypte.',
+  ),
+  TimelineEvent(
+    date: 'c. 1457 av. J.-C.',
+    title: 'Bataille de Megiddo',
+    description:
+        'Thoutmôsis III remporte une victoire majeure au Levant, consolidant la puissance du Nouvel Empire.',
+  ),
+  TimelineEvent(
+    date: 'c. 1274 av. J.-C.',
+    title: 'Bataille de Qadesh',
+    description:
+        'Ramsès II affronte les Hittites. L’issue est disputée, mais la bataille devient un symbole militaire égyptien.',
+  ),
+  TimelineEvent(
+    date: 'c. 1258 av. J.-C.',
+    title: 'Traité de paix égypto-hittite',
+    description:
+        'Accord diplomatique majeur après Qadesh, souvent cité comme l’un des plus anciens traités de paix connus.',
+  ),
+  TimelineEvent(
+    date: 'c. 1207 av. J.-C.',
+    title: 'Campagnes de Mérenptah',
+    description:
+        'Le pouvoir égyptien affirme son contrôle face aux tensions régionales en Libye et au Levant.',
+  ),
+  TimelineEvent(
+    date: 'c. 1177-1175 av. J.-C.',
+    title: 'Ramsès III contre les Peuples de la mer',
+    description:
+        'Conflits terrestres et navals décisifs: l’Égypte résiste aux grandes migrations et invasions de la fin de l’âge du Bronze.',
+  ),
+  TimelineEvent(
+    date: '671-663 av. J.-C.',
+    title: 'Invasions assyriennes de l’Égypte',
+    description:
+        'Les Assyriens mènent plusieurs campagnes et occupent temporairement des centres de pouvoir égyptiens.',
+  ),
+  TimelineEvent(
+    date: '525 av. J.-C.',
+    title: 'Conquête perse (Cambyse II)',
+    description:
+        'L’empire achéménide conquiert l’Égypte, ouvrant la première domination perse.',
+  ),
+  TimelineEvent(
+    date: '343 av. J.-C.',
+    title: 'Reconquête perse (Artaxerxès III)',
+    description:
+        'La seconde domination perse commence après la chute des dernières dynasties indigènes.',
+  ),
+  TimelineEvent(
+    date: '332 av. J.-C.',
+    title: 'Conquête d’Alexandre le Grand',
+    description:
+        'L’Égypte passe sous contrôle macédonien, marquant un nouveau tournant politique et militaire.',
+  ),
+  TimelineEvent(
+    date: '31-30 av. J.-C.',
+    title: 'Actium et fin de l’Égypte lagide',
+    description:
+        'Après la défaite d’Actium, Cléopâtre VII et Marc Antoine chutent; l’Égypte devient province romaine.',
+  ),
+];
+
 const timelineData = [
   TimelineEvent(
     date: 'c. 4000-3200 av. J.-C.',

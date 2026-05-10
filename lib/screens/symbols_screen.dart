@@ -24,7 +24,8 @@ class _SymbolsScreenState extends State<SymbolsScreen> {
     final filtered = symbolsData.where((s) {
       final matchesQuery =
           s.name.toLowerCase().contains(query.toLowerCase()) ||
-          s.meaning.toLowerCase().contains(query.toLowerCase());
+          s.meaning.toLowerCase().contains(query.toLowerCase()) ||
+          s.description.toLowerCase().contains(query.toLowerCase());
       final matchesMeaning =
           selectedMeaning == 'Tous' || s.meaning == selectedMeaning;
       return matchesQuery && matchesMeaning;

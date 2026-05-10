@@ -18,6 +18,8 @@ class _QuizScreenState extends State<QuizScreen> {
   int score = 0;
   int bestScore = 0;
   bool finished = false;
+  int? selectedIndex;
+  bool revealAnswer = false;
 
   @override
   void initState() {
@@ -32,11 +34,19 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Future<void> selectAnswer(int index) async {
-    if (finished) return;
+    if (finished || revealAnswer) return;
 
-    if (quizData[current].correctIndex == index) {
+    final isCorrect = quizData[current].correctIndex == index;
+    if (isCorrect) {
       score++;
     }
+
+    setState(() {
+      selectedIndex = index;
+      revealAnswer = true;
+    });
+
+    await Future<void>.delayed(const Duration(milliseconds: 700));
 
     if (current == quizData.length - 1) {
       await storage.saveBestQuizScore(score);
@@ -46,7 +56,11 @@ class _QuizScreenState extends State<QuizScreen> {
       }
       setState(() => finished = true);
     } else {
-      setState(() => current++);
+      setState(() {
+        current++;
+        selectedIndex = null;
+        revealAnswer = false;
+      });
     }
   }
 
@@ -55,6 +69,8 @@ class _QuizScreenState extends State<QuizScreen> {
       current = 0;
       score = 0;
       finished = false;
+      selectedIndex = null;
+      revealAnswer = false;
     });
   }
 
@@ -68,6 +84,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     final question = quizData[current];
+    final progress = (current + (finished ? 1 : 0)) / quizData.length;
 
     return Scaffold(
       appBar: AppBar(title: const Text('Kemet Explorer')),
@@ -105,6 +122,12 @@ class _QuizScreenState extends State<QuizScreen> {
                     'Question ${current + 1} / ${quizData.length}',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
+                  const SizedBox(height: 8),
+                  LinearProgressIndicator(
+                    value: progress,
+                    minHeight: 7,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   const SizedBox(height: 12),
                   Card(
                     child: Padding(
@@ -117,12 +140,30 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                   const SizedBox(height: 10),
                   ...List.generate(question.options.length, (index) {
+                    final isCorrect = question.correctIndex == index;
+                    final isSelected = selectedIndex == index;
+                    Color? borderColor;
+                    Color? backgroundColor;
+                    if (revealAnswer && isCorrect) {
+                      borderColor = Colors.green;
+                      backgroundColor = Colors.green.withValues(alpha: 0.10);
+                    } else if (revealAnswer && isSelected && !isCorrect) {
+                      borderColor = Colors.red;
+                      backgroundColor = Colors.red.withValues(alpha: 0.10);
+                    }
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
                           onPressed: () => selectAnswer(index),
+                          style: OutlinedButton.styleFrom(
+                            backgroundColor: backgroundColor,
+                            side: BorderSide(
+                              color: borderColor ?? Colors.transparent,
+                              width: borderColor == null ? 0 : 1.5,
+                            ),
+                          ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 12),
                             child: Text(question.options[index]),
@@ -131,6 +172,20 @@ class _QuizScreenState extends State<QuizScreen> {
                       ),
                     );
                   }),
+                  if (revealAnswer) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      selectedIndex == question.correctIndex
+                          ? 'Bonne réponse'
+                          : 'Bonne réponse: ${question.options[question.correctIndex]}',
+                      style: TextStyle(
+                        color: selectedIndex == question.correctIndex
+                            ? Colors.green
+                            : Colors.red,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
                 ],
               ),
       ),

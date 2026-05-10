@@ -1,4 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 class LocalStorageService {
   static const _favoritesKey = 'favorites_ids';
@@ -6,6 +7,8 @@ class LocalStorageService {
   static const _bestQuizScoreKey = 'best_quiz_score';
   static const _lastSectionKey = 'last_section_key';
   static const _ambienceEnabledKey = 'ambience_enabled';
+  static const _chatProviderKey = 'chat_provider_key';
+  static const _chatConfigsKey = 'chat_provider_configs_json';
 
   Future<Set<String>> loadFavorites() async {
     final prefs = await SharedPreferences.getInstance();
@@ -58,5 +61,42 @@ class LocalStorageService {
   Future<bool> loadAmbienceEnabled() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_ambienceEnabledKey) ?? false;
+  }
+
+  Future<void> saveChatProvider(String providerName) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_chatProviderKey, providerName);
+  }
+
+  Future<String?> loadChatProvider() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_chatProviderKey);
+  }
+
+  Future<void> saveChatProviderConfigs(
+    Map<String, Map<String, String>> data,
+  ) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_chatConfigsKey, jsonEncode(data));
+  }
+
+  Future<Map<String, Map<String, String>>> loadChatProviderConfigs() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getString(_chatConfigsKey);
+    if (raw == null || raw.isEmpty) return <String, Map<String, String>>{};
+
+    try {
+      final decoded = jsonDecode(raw);
+      if (decoded is! Map) return <String, Map<String, String>>{};
+      final result = <String, Map<String, String>>{};
+      decoded.forEach((key, value) {
+        if (key is String && value is Map) {
+          result[key] = value.map((k, v) => MapEntry('$k', '$v'));
+        }
+      });
+      return result;
+    } catch (_) {
+      return <String, Map<String, String>>{};
+    }
   }
 }

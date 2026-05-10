@@ -299,4 +299,130 @@ const monumentsData = [
     ],
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Meidum',
   ),
+  Monument(
+    id: 'serapeum_saqqara',
+    name: 'Sérapéum de Saqqarah',
+    location: 'Saqqarah',
+    category: 'Nécropole sacrée',
+    importance:
+        'Complexe souterrain dédié aux taureaux Apis, essentiel pour comprendre les cultes animaux et funéraires.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Galeries monumentales souterraines.',
+      'Rôle religieux majeur à l’époque tardive.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Serapeum_of_Saqqara',
+  ),
+  Monument(
+    id: 'abu_rawash',
+    name: 'Abou Rawash',
+    location: 'Nord de Gizeh',
+    category: 'Pyramides',
+    importance:
+        'Site de la pyramide de Djédefrê, important pour la compréhension des dynasties de l’Ancien Empire.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Pyramide souvent très ruinée.',
+      'Relie Gizeh à l’histoire de la IVe dynastie.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Pyramid_of_Djedefre',
+  ),
+  Monument(
+    id: 'el_lisht',
+    name: 'Nécropole d’el-Lisht',
+    location: 'Fayoum / Moyenne-Égypte',
+    category: 'Pyramides',
+    importance:
+        'Nécropole des rois du Moyen Empire, notamment Amenemhat Ier et Sésostris Ier.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Site central pour le Moyen Empire.',
+      'Architecture pyramidale renouvelée après l’Ancien Empire.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/El-Lisht',
+  ),
+  Monument(
+    id: 'hawara',
+    name: 'Pyramide de Hawara',
+    location: 'Fayoum',
+    category: 'Pyramides',
+    importance:
+        'Pyramide d’Amenemhat III, associée dans l’Antiquité au fameux “Labyrinthe” égyptien.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Témoignage majeur du Moyen Empire tardif.',
+      'Traditions grecques sur un vaste complexe annexe.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Hawara',
+  ),
+  Monument(
+    id: 'temple_seti_abydos',
+    name: 'Temple de Séthi Ier à Abydos',
+    location: 'Abydos',
+    category: 'Temple',
+    importance:
+        'Temple majeur du Nouvel Empire, célèbre pour ses reliefs et pour la liste royale d’Abydos.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Reliefs raffinés et programme religieux ambitieux.',
+      'Source dynastique de référence.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Seti_I_Temple_(Abydos)',
+  ),
+  Monument(
+    id: 'osireion',
+    name: 'Osiréion d’Abydos',
+    location: 'Abydos',
+    category: 'Monument rituel',
+    importance:
+        'Monument énigmatique lié au culte d’Osiris, complément spirituel du grand temple voisin.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Architecture monumentale en blocs mégalithiques.',
+      'Forte portée symbolique osirienne.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Osireion',
+  ),
+  Monument(
+    id: 'deir_el_medina',
+    name: 'Deir el-Médina',
+    location: 'Rive ouest de Louxor',
+    category: 'Village antique',
+    importance:
+        'Village des artisans des tombes royales, source exceptionnelle sur la vie quotidienne et les pratiques funéraires.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Archives uniques sur le travail des artisans.',
+      'Lien direct avec Vallée des Rois et Vallée des Reines.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Deir_el-Medina',
+  ),
+  Monument(
+    id: 'colossi_memnon',
+    name: 'Colosses de Memnon',
+    location: 'Rive ouest de Louxor',
+    category: 'Statues monumentales',
+    importance:
+        'Deux statues géantes d’Amenhotep III, repères emblématiques du paysage thébain.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Vestiges du temple funéraire d’Amenhotep III.',
+      'Monuments célèbres dès l’Antiquité gréco-romaine.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Colossi_of_Memnon',
+  ),
+  Monument(
+    id: 'temple_montou_medamud',
+    name: 'Temple de Médamoud',
+    location: 'Région de Thèbes',
+    category: 'Temple',
+    importance:
+        'Temple dédié à Montou, utile pour comprendre les cultes locaux thébains et leur évolution.',
+    imagePath: 'assets/images/kemet_1.png',
+    highlights: [
+      'Importance religieuse locale de Montou.',
+      'Phases de construction sur plusieurs périodes.',
+    ],
+    imageSourceUrl: 'https://en.wikipedia.org/wiki/Medamud',
+  ),
 ];
