@@ -182,9 +182,37 @@ class _HomeScreenState extends State<HomeScreen> {
     return [lighter.toColor(), darker.toColor()];
   }
 
-  double _radiusFor(int index) {
+  BorderRadius _shapeFor(int index) {
     final random = Random((_homeStyleNonce * 41) + (index * 19));
-    return 14 + random.nextInt(14).toDouble();
+
+    double pick() => 8 + random.nextInt(26).toDouble();
+
+    // On évite 4 coins identiques: au moins un coin peu arrondi et un très arrondi.
+    final tl = pick();
+    final tr = pick();
+    final br = pick();
+    final bl = pick();
+    final values = [tl, tr, br, bl]..sort();
+    final low = values.first.clamp(4, 10).toDouble();
+    final high = values.last.clamp(22, 34).toDouble();
+
+    final positions = [tl, tr, br, bl];
+    final minIndex = positions.indexOf(values.first);
+    final maxIndex = positions.indexOf(values.last);
+    positions[minIndex] = low;
+    positions[maxIndex] = high;
+
+    return BorderRadius.only(
+      topLeft: Radius.circular(positions[0]),
+      topRight: Radius.circular(positions[1]),
+      bottomRight: Radius.circular(positions[2]),
+      bottomLeft: Radius.circular(positions[3]),
+    );
+  }
+
+  bool _isLemonShape(int index) {
+    final random = Random((_homeStyleNonce * 131) + (index * 23));
+    return random.nextDouble() < 0.28;
   }
 
   Widget? _pageForKey(String? key) {
@@ -400,15 +428,17 @@ class _HomeScreenState extends State<HomeScreen> {
               : Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         'Explorer l’Égypte antique',
+                        textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       const SizedBox(height: 6),
                       Text(
                         'Une visite tranquille, visuelle et culturelle.',
+                        textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const SizedBox(height: 10),
@@ -495,7 +525,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   title: displayedCategories[0].$2,
                                   icon: displayedCategories[0].$3,
                                   color: displayedCategories[0].$4,
-                                  borderRadius: _radiusFor(0),
+                                  borderRadius: _shapeFor(0),
+                                  lemonShape: _isLemonShape(0),
                                   gradientColors: _gradientPair(
                                     displayedCategories[0].$4,
                                     0,
@@ -526,7 +557,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           title: displayedCategories[i].$2,
                                           icon: displayedCategories[i].$3,
                                           color: displayedCategories[i].$4,
-                                          borderRadius: _radiusFor(i),
+                                          borderRadius: _shapeFor(i),
+                                          lemonShape: _isLemonShape(i),
                                           gradientColors: _gradientPair(
                                             displayedCategories[i].$4,
                                             i,
@@ -550,7 +582,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           title: displayedCategories[i + 1].$2,
                                           icon: displayedCategories[i + 1].$3,
                                           color: displayedCategories[i + 1].$4,
-                                          borderRadius: _radiusFor(i + 1),
+                                          borderRadius: _shapeFor(i + 1),
+                                          lemonShape: _isLemonShape(i + 1),
                                           gradientColors: _gradientPair(
                                             displayedCategories[i + 1].$4,
                                             i + 1,
@@ -574,7 +607,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     title: displayedCategories[i + 2].$2,
                                     icon: displayedCategories[i + 2].$3,
                                     color: displayedCategories[i + 2].$4,
-                                    borderRadius: _radiusFor(i + 2),
+                                    borderRadius: _shapeFor(i + 2),
+                                    lemonShape: _isLemonShape(i + 2),
                                     gradientColors: _gradientPair(
                                       displayedCategories[i + 2].$4,
                                       i + 2,
