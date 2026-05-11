@@ -202,7 +202,7 @@ const monumentsData = [
     category: 'Temple funéraire',
     importance:
         'Complexe de Ramsès III connu pour ses murs massifs et ses reliefs historiques détaillés.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/medinet_habou.jpeg',
     highlights: [
       'Photo à venir.',
       'Reliefs des conflits contre les Peuples de la mer.',
@@ -218,7 +218,7 @@ const monumentsData = [
     category: 'Temple funéraire',
     importance:
         'Temple funéraire de Ramsès II, célèbre pour ses colosses et son rôle mémoriel royal.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/ramesseum.jpeg',
     highlights: [
       'Photo à venir.',
       'Monument clé de la propagande ramesside.',
@@ -248,7 +248,7 @@ const monumentsData = [
     category: 'Temple',
     importance:
         'Temple tardif remarquable pour ses colonnes et inscriptions bien conservées.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/temple_esna.jpeg',
     highlights: [
       'Photo à venir.',
       'Décor polychrome restauré.',
@@ -291,7 +291,7 @@ const monumentsData = [
     category: 'Pyramides',
     importance:
         'Monument de transition architectural entre formes anciennes et pyramides classiques.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/meidoum.jpeg',
     highlights: [
       'Photo à venir.',
       'Structure partiellement effondrée très étudiée.',
@@ -306,7 +306,7 @@ const monumentsData = [
     category: 'Nécropole sacrée',
     importance:
         'Complexe souterrain dédié aux taureaux Apis, essentiel pour comprendre les cultes animaux et funéraires.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/serapeum_saqqarah.jpeg',
     highlights: [
       'Galeries monumentales souterraines.',
       'Rôle religieux majeur à l’époque tardive.',
@@ -320,7 +320,7 @@ const monumentsData = [
     category: 'Pyramides',
     importance:
         'Site de la pyramide de Djédefrê, important pour la compréhension des dynasties de l’Ancien Empire.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/abou_rawash.jpeg',
     highlights: [
       'Pyramide souvent très ruinée.',
       'Relie Gizeh à l’histoire de la IVe dynastie.',
@@ -334,7 +334,7 @@ const monumentsData = [
     category: 'Pyramides',
     importance:
         'Nécropole des rois du Moyen Empire, notamment Amenemhat Ier et Sésostris Ier.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/el_lisht.jpeg',
     highlights: [
       'Site central pour le Moyen Empire.',
       'Architecture pyramidale renouvelée après l’Ancien Empire.',
@@ -348,7 +348,7 @@ const monumentsData = [
     category: 'Pyramides',
     importance:
         'Pyramide d’Amenemhat III, associée dans l’Antiquité au fameux “Labyrinthe” égyptien.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/hawara.jpeg',
     highlights: [
       'Témoignage majeur du Moyen Empire tardif.',
       'Traditions grecques sur un vaste complexe annexe.',
@@ -362,7 +362,7 @@ const monumentsData = [
     category: 'Temple',
     importance:
         'Temple majeur du Nouvel Empire, célèbre pour ses reliefs et pour la liste royale d’Abydos.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/temple_seti_1.jpeg',
     highlights: [
       'Reliefs raffinés et programme religieux ambitieux.',
       'Source dynastique de référence.',
@@ -376,7 +376,7 @@ const monumentsData = [
     category: 'Monument rituel',
     importance:
         'Monument énigmatique lié au culte d’Osiris, complément spirituel du grand temple voisin.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/osireion_abydos.jpeg',
     highlights: [
       'Architecture monumentale en blocs mégalithiques.',
       'Forte portée symbolique osirienne.',
@@ -390,7 +390,7 @@ const monumentsData = [
     category: 'Village antique',
     importance:
         'Village des artisans des tombes royales, source exceptionnelle sur la vie quotidienne et les pratiques funéraires.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/deir_el_medina.jpeg',
     highlights: [
       'Archives uniques sur le travail des artisans.',
       'Lien direct avec Vallée des Rois et Vallée des Reines.',
@@ -404,7 +404,7 @@ const monumentsData = [
     category: 'Statues monumentales',
     importance:
         'Deux statues géantes d’Amenhotep III, repères emblématiques du paysage thébain.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/colosse_de_memnon.jpeg',
     highlights: [
       'Vestiges du temple funéraire d’Amenhotep III.',
       'Monuments célèbres dès l’Antiquité gréco-romaine.',
@@ -418,7 +418,7 @@ const monumentsData = [
     category: 'Temple',
     importance:
         'Temple dédié à Montou, utile pour comprendre les cultes locaux thébains et leur évolution.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/temple_medamoud.jpeg',
     highlights: [
       'Importance religieuse locale de Montou.',
       'Phases de construction sur plusieurs périodes.',

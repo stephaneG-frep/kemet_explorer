@@ -20,6 +20,7 @@ import 'history_screen.dart';
 import 'launch_video_screen.dart';
 import 'monuments_screen.dart';
 import 'cartouches_screen.dart';
+import 'discoveries_screen.dart';
 import 'mythology_screen.dart';
 import 'myth_stories_screen.dart';
 import 'pharaohs_screen.dart';
@@ -253,6 +254,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return const CartouchesScreen();
       case 'writings':
         return const WritingSystemsScreen();
+      case 'discoveries':
+        return const DiscoveriesScreen();
       case 'guided':
         return GuidedTourScreen(
           favorites: favorites,
@@ -374,6 +377,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.translate_rounded,
         Colors.blue.shade700,
         const WritingSystemsScreen(),
+      ),
+      (
+        'discoveries',
+        'Découvertes & archéologues',
+        Icons.travel_explore_rounded,
+        Colors.blueGrey.shade700,
+        const DiscoveriesScreen(),
       ),
       (
         'guided',
