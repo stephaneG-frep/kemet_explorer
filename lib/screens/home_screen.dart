@@ -278,6 +278,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final categories = [
       (
+        'help_guide',
+        'Mode d’emploi',
+        Icons.school_rounded,
+        Colors.deepOrange.shade300,
+        const HelpGuideScreen(),
+      ),
+      (
         'mythology',
         'Mythologie',
         Icons.auto_stories_rounded,
@@ -335,13 +342,6 @@ class _HomeScreenState extends State<HomeScreen> {
         Icons.smart_toy_rounded,
         Colors.lightBlue.shade700,
         const ChatbotScreen(),
-      ),
-      (
-        'help_guide',
-        'Mode d’emploi',
-        Icons.school_rounded,
-        Colors.deepOrange.shade300,
-        const HelpGuideScreen(),
       ),
       (
         'symbols',
@@ -403,8 +403,7 @@ class _HomeScreenState extends State<HomeScreen> {
         QuizScreen(onQuizFinished: refreshBestScore),
       ),
     ];
-    final displayedCategories = [...categories]
-      ..shuffle(Random(_homeStyleNonce * 17));
+    final displayedCategories = categories;
 
     return Scaffold(
       appBar: AppBar(
