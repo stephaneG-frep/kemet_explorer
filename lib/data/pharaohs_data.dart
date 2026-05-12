@@ -24,7 +24,7 @@ const pharaohsData = [
       'Commanditaire de la pyramide à degrés de Saqqarah.',
       'Souverain majeur du début de l’architecture monumentale en pierre.',
     ],
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/djoser.jpeg',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Djoser',
   ),
   Pharaoh(
@@ -50,7 +50,7 @@ const pharaohsData = [
       'Projet pyramidal inachevé à Saqqarah.',
       'Règne important pour la transition post-Djéser.',
     ],
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/den.jpg',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Sekhemkhet',
   ),
   Pharaoh(
@@ -63,7 +63,7 @@ const pharaohsData = [
       'Contribue à renforcer les institutions royales naissantes.',
       'Figure clé de la consolidation de l’État égyptien ancien.',
     ],
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/qaa.jpg',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Den_(pharaoh)',
   ),
   Pharaoh(
@@ -115,7 +115,7 @@ const pharaohsData = [
       'Fait ériger la troisième grande pyramide de Gizeh.',
       'Connu par plusieurs triades sculptées remarquables.',
     ],
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/semerkhet.jpeg',
     imageSourceUrl: 'https://en.wikipedia.org/wiki/Menkaure',
   ),
   Pharaoh(

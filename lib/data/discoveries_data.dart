@@ -24,7 +24,7 @@ const discoveriesData = [
     place: 'Rashid (Rosette)',
     description: 'Stèle trilingue qui a permis de déchiffrer les hiéroglyphes.',
     importance: 'Base du déchiffrement par Champollion en 1822.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/pierre_rosette.jpg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Rosetta_Stone',
     highlights: ['Textes en hiéroglyphique, démotique et grec ancien.'],
   ),
@@ -48,7 +48,7 @@ const discoveriesData = [
     description:
         'Suite de cartouches royaux servant de référence pour la succession dynastique.',
     importance: 'Document majeur pour reconstruire la chronologie pharaonique.',
-    imagePath: 'assets/images/temple_abydos.png',
+    imagePath: 'assets/images/liste_abydos.jpg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Abydos_King_List',
     highlights: ['Source essentielle, avec limites et omissions connues.'],
   ),
@@ -61,7 +61,7 @@ const discoveriesData = [
         'Tablettes cunéiformes diplomatiques entre l’Égypte et le Proche-Orient.',
     importance:
         'Elles éclairent la géopolitique du Nouvel Empire au XIVe siècle av. J.-C.',
-    imagePath: 'assets/images/amarna_custom.png',
+    imagePath: 'assets/images/lettre_amarna.jpeg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Amarna_letters',
     highlights: ['Correspondances royales et vassaliques.'],
   ),
@@ -73,7 +73,7 @@ const discoveriesData = [
     description:
         'Objet cérémoniel emblématique des débuts de l’État pharaonique.',
     importance: 'Témoignage clé de l’unification et de l’iconographie royale.',
-    imagePath: 'assets/images/narmer_custom.png',
+    imagePath: 'assets/images/palette_narmer.jpeg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Narmer_Palette',
     highlights: ['Pièce centrale pour l’histoire de la période thinite.'],
   ),
@@ -86,7 +86,7 @@ const discoveriesData = [
         'Grande embarcation funéraire démontée retrouvée près de la pyramide de Khéops.',
     importance:
         'Illustration exceptionnelle des rites royaux et de la technique navale.',
-    imagePath: 'assets/images/gizeh.jpg',
+    imagePath: 'assets/images/barque_solaire.jpeg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Khufu_ship',
     highlights: ['Conservation remarquable de bois ancien.'],
   ),
@@ -98,7 +98,7 @@ const discoveriesData = [
     description:
         'Dépôt de momies royales déplacées pour les protéger des pillages.',
     importance: 'A livré des souverains majeurs comme Séthi Ier et Ramsès II.',
-    imagePath: 'assets/images/deir_el_bahari.jpg',
+    imagePath: 'assets/images/cachette_royale_db320.jpeg',
     sourceUrl: 'https://en.wikipedia.org/wiki/DB320',
     highlights: [
       'Réorganisation funéraire à la Troisième Période intermédiaire.',
@@ -112,7 +112,7 @@ const discoveriesData = [
     description:
         'Galeries funéraires des taureaux Apis avec sarcophages monumentaux.',
     importance: 'Source majeure sur les cultes animaux sacrés.',
-    imagePath: 'assets/images/serapeum_saqqarah.jpeg',
+    imagePath: 'assets/images/hypogees_serapeum.jpeg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Serapeum_of_Saqqara',
     highlights: ['Sarcophages massifs et inscriptions cultuelles.'],
   ),
@@ -123,7 +123,7 @@ const discoveriesData = [
     place: 'Vallée des Reines',
     description: 'Tombe prestigieuse célèbre pour ses peintures murales.',
     importance: 'Chef-d’œuvre de l’art funéraire ramesside.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/tombe_nefertari.jpeg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Nefertari',
     highlights: ['Programme iconographique d’une grande finesse.'],
   ),
@@ -135,7 +135,7 @@ const discoveriesData = [
     description: 'Sépultures royales de la Troisième Période intermédiaire.',
     importance:
         'Ensemble funéraire souvent comparé à un “second Toutânkhamon”.',
-    imagePath: 'assets/images/kemet_1.png',
+    imagePath: 'assets/images/tombes_tanis.jpeg',
     sourceUrl: 'https://en.wikipedia.org/wiki/Tanis',
     highlights: ['Mobilier précieux et masques funéraires.'],
   ),
